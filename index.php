@@ -1,8 +1,6 @@
 <?php
-$image_type="png";
-
-$titre_page="layers.openstreetmap.fr - Tuiles pour contrôle de données / Tile service with data checks";
-$explain_link="http://wiki.openstreetmap.org/wiki/FR:Servers/layers.openstreetmap.fr";
+$titre_page="maps.refuges.info - Hiking rendering";
+$explain_link="http://wiki.openstreetmap.org/wiki/Hiking/mri";
 
 ?>
 
@@ -42,21 +40,6 @@ form { display: inline; margin: 0; }
 	border-radius: 10px; 
 	background: white;
 }
-/* div#search:hover {
-	position: absolute;
-	top: 10px;
-	left: 50px;
-	z-index: 1008;
-	font-size:12px;
-	padding: 5px;
-	border-radius: 10px; 
-	background: white;
-	height: 500px;
-        -webkit-transition: all .2s ease-out;
-        -moz-transition: all .2s ease-out;
-        -o-transition: all .2s ease-out;
-        transition: all .2s ease-out; 
-} */
 div#search li {
 	text-decoration: underline;
 	color: blue;
@@ -125,7 +108,7 @@ function qs_init() {
 
 function init()
 {
-  var global_numZoomLevels = 20;
+  var global_numZoomLevels = 19;
 
   var switcher = new OpenLayers.Control.LayerSwitcher();
   map = new OpenLayers.Map({
@@ -279,7 +262,7 @@ function mapMoved() {
 
 <div id="search">
 <form method="get" onsubmit="return false;">
-  <input type="text" id="q" value="<?php echo $_GET['q'] ?>" name="q" autocomplete="off" />
+  <input type="text" id="q" value="<?php if (isset ($_GET['q'])) echo $_GET['q']; ?>" name="q" autocomplete="off" />
   <input type="hidden" name="viewbox" id="viewbox" />
   <input style="vertical-align: middle" onclick="refineSearch()" type="image" src="images/nominatim.gif" title="Search with Nominatim" />
   <input type="submit" style="display: none;" />
@@ -287,46 +270,24 @@ function mapMoved() {
 <div id="search_results"></div>
 </div>
 
+<?php
+if (is_file("./maintenance")) {
+?>
 <div id="attributions">
-<p>
-	<a href="http://fondation.free.org/"><img src="http://fondation.free.org/images/logos/logo-hosted-redSmall.png" align=left></a>
-	<br>
-	Serveur et hébergement donné par la
-	<a href="http://fondation.free.org/">Fondation&nbsp;d'Entreprise&nbsp;Free</a>
-	<br>
-	<a href="<?=$explain_link?>">A propos de ce service / What is this</a><br/>
-
-	<?php
-	print("Base mise à jour le ");
-	$ts = exec("date +%s -d \"$(wget -qO - http://osm2pgsql-monde.openstreetmap.fr/~osm2pgsql/state.txt | grep timestamp= | cut -f2- -d=  | sed -e 's/\\\\//g' -e s/.$// | sed -e 's/T/ /')\"");
-	setlocale(LC_TIME, "fr_FR.UTF8");
-	print strftime("%A&nbsp;%e&nbsp;%B&nbsp;%Y&nbsp;%H:%M:%S&nbsp;UTC", $ts);
-	if (is_file("./maintenance"))
-	  print("<font color=\"red\">The server is currently in maintenance or experiencing problems</font>");
-	?>
-</p>
+  <p>
+    <font color="red">The server is currently in maintenance or experiencing problems</font>
+  </p>
+<?php }
+?>
+  
 </div>
 
 <div id="permalinks">
       <ul>
         <li><a id="permalink" href="">Permalink</a></li>
-        <li><a id="permalink.potlatch" target="_blank" href="">Edit with Potlatch</a></li>
-        <!-- FIXME later  <li><a id="permalink.josm" target="_blank" href="">Edit with JOSM</a></li> -->
+        <li><a id="permalink.potlatch" target="_blank" href="">Edit the map</a></li>
       </ul>
 </div>
-
-<!-- Piwik --> 
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://openstreetmap.fr/piwik/" : "http://openstreetmap.fr/piwik/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://openstreetmap.fr/piwik/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code -->
 
 </body>
 

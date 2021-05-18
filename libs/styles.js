@@ -1,7 +1,7 @@
 // liste des styles disponibles
 // Dans une vie postérieure, cette liste pourra être dynamiquement générée en interrogeant les serveurs de rendus et les styles dont ils disposent -- sly
 
-var base_url = [ window.location.protocol + '//maps.refuges.info/' ];
+var base_url = [ window.location.protocol + '//' + window.location.hostname + '/' ];
 
 //base styles (not transparent)
 var all_available_styles = [

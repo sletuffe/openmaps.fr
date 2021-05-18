@@ -1,12 +1,6 @@
-<?php
-$titre_page="maps.refuges.info - Hiking rendering";
-$explain_link="http://wiki.openstreetmap.org/wiki/Hiking/mri";
-
-?>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head> 
-  <title><?=$titre_page?></title>
+  <title>maps.refuges.info - Hiking rendering</title>
   <link rel="shortcut icon" href="/images/favicon.png"/>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
      <style type="text/css">
@@ -262,7 +256,7 @@ function mapMoved() {
 
 <div id="search">
 <form method="get" onsubmit="return false;">
-  <input type="text" id="q" value="<?php if (isset ($_GET['q'])) echo $_GET['q']; ?>" name="q" autocomplete="off" />
+  <input type="text" id="q" value="" name="q" autocomplete="off" />
   <input type="hidden" name="viewbox" id="viewbox" />
   <input style="vertical-align: middle" onclick="refineSearch()" type="image" src="images/nominatim.gif" title="Search with Nominatim" />
   <input type="submit" style="display: none;" />
@@ -270,18 +264,14 @@ function mapMoved() {
 <div id="search_results"></div>
 </div>
 
-<?php
-if (is_file("./maintenance")) {
-?>
+<!--
 <div id="attributions">
   <p>
     <font color="red">The server is currently in maintenance or experiencing problems</font>
   </p>
-<?php }
-?>
   
 </div>
-
+-->
 <div id="permalinks">
       <ul>
         <li><a id="permalink" href="">Permalink</a></li>

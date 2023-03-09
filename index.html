@@ -218,7 +218,7 @@ function refineSearch() {
   var q = $("input#q").val();
   $("#search_results").empty();
 
-  $.get('http://nominatim.openstreetmap.org/search.php?email=nicolas@bouthors.org&format=json&countrycodes=fr&q='+q, function (data) { 
+  $.get('https://nominatim.openstreetmap.org/search.php?email=sylvain@refuges.info&format=json&q='+q, function (data) { 
     if (data[0]) {
       // map.setCenter(new OpenLayers.LonLat(data[0].lon,data[0].lat).transform( new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject() ), 12); 
       $("#search_results").append('<ul class="search_results">');
@@ -232,9 +232,8 @@ function refineSearch() {
       if(history.pushState)
         history.pushState({"id":101}, "", "?q="+q);
     } else {
-      $("#search_results").append('<i>Aucun résultat</i>');
+      $("#search_results").append('<i>Empty result</i>');
     }
-    $("#search_results").append('<br/>Recherche limitée à la France. <a onclick="$(\'#search_results\').empty()" href="#">Masquer les résultats</a>');
   }, "json");
 }
 function mapMoved() {

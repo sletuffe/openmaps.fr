@@ -20,6 +20,14 @@ var all_available_styles = [
     attribution: '<a href="https://opentopomap.org/about">More informations &copy; OTM</a> MODIS/Terra Snow Cover 8-day by NSDIC <br>ASTER GDEM is a product of METI and NASA<br> SRTM V4 thanks to CGIAR-CSI<br>EU-DEM produced using Copernicus data and information funded by the European Union.',
     description: 'OpenTopoMap customization',
     numZoomLevels: 19
+  },
+  {
+    id: 'official-otm',
+    name: 'OpenTopoMap Official',
+    tile_urls: [ 'https://a.tile.opentopomap.org/${z}/${x}/${y}.png' ],
+    attribution: '<a href="https://opentopomap.org/about">More informations &copy; OTM</a> MODIS/Terra Snow Cover 8-day by NSDIC <br>ASTER GDEM is a product of METI and NASA<br> SRTM V4 thanks to CGIAR-CSI<br>EU-DEM produced using Copernicus data and information funded by the European Union.',
+    description: 'OpenTopoMap customization',
+    numZoomLevels: 17
   }
 ];
 var all_available_overlays = [];

@@ -1,2 +1,3 @@
-#Option du dernier recours, pour tout couper
+#Pour couper l'accès à l'interface OpenLayers, mais ça ne coupe pas l'accès
+#aux tuiles !
 #deny from all

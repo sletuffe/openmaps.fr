@@ -9,7 +9,7 @@ var all_available_styles = [
     id: 'ohm',
     name: 'OpenHikingMap',
     tile_urls: [ base_url[0] + 'hiking/${z}/${x}/${y}.png' ],
-    attribution: '<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">More informations &copy; sly</a> MODIS/Terra Snow Cover 8-day by NSDIC <br>ASTER GDEM is a product of METI and NASA<br> SRTM V4 thanks to CGIAR-CSI<br>EU-DEM produced using Copernicus data and information funded by the European Union.<br>',
+    attribution: '<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; sly</a>',
     description: 'OpenHikingMap main rendering',
     numZoomLevels: 19
   },
@@ -17,15 +17,15 @@ var all_available_styles = [
     id: 'otm',
     name: 'OpenTopoMap local clone',
     tile_urls: [ base_url[0] + 'otm/${z}/${x}/${y}.png' ],
-    attribution: '<a href="https://opentopomap.org/about">More informations &copy; OTM</a> MODIS/Terra Snow Cover 8-day by NSDIC <br>ASTER GDEM is a product of METI and NASA<br> SRTM V4 thanks to CGIAR-CSI<br>EU-DEM produced using Copernicus data and information funded by the European Union.',
+    attribution: '<a href="https://github.com/RefugesInfo/OpenTopoMap">&copy; OTM-R</a>',
     description: 'OpenTopoMap local adaptation and customization',
-    numZoomLevels: 19
+    numZoomLevels: 17
   },
   {
     id: 'official-otm',
     name: 'OpenTopoMap Official',
     tile_urls: [ 'https://a.tile.opentopomap.org/${z}/${x}/${y}.png' ],
-    attribution: '<a href="https://opentopomap.org/about">More informations &copy; OTM</a> MODIS/Terra Snow Cover 8-day by NSDIC <br>ASTER GDEM is a product of METI and NASA<br> SRTM V4 thanks to CGIAR-CSI<br>EU-DEM produced using Copernicus data and information funded by the European Union.',
+    attribution: '<a href="https://opentopomap.org/about">&copy; OTM</a>',
     description: 'OpenTopoMap main server',
     numZoomLevels: 17
   }

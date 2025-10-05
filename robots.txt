@@ -1,0 +1,2 @@
+#Useless robots.txt to avoid http 404 in logs, but I can't remember what is
+#the problem ?

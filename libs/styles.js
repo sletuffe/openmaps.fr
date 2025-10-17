@@ -4,7 +4,7 @@ var all_available_styles = [
     id: 'OpenHikingMap',
     name: 'OpenHikingMap',
     tile_urls: [ 'https://tile.openmaps.fr/openhikingmap/${z}/${x}/${y}.png' ],
-    attribution: '<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap</a>',
+    attribution: '<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donnate">❤️ Donation</a>',
     description: 'OpenHikingMap main rendering',
     numZoomLevels: 19
   },
@@ -12,7 +12,7 @@ var all_available_styles = [
     id: 'OpenTopoMap',
     name: 'OpenTopoMap local clone',
     tile_urls: [ 'https://tile.openmaps.fr/opentopomap/${z}/${x}/${y}.png' ],
-    attribution: '<a href="https://github.com/sletuffe/OpenTopoMap">&copy; OTM-R</a>',
+    attribution: '<a href="https://github.com/sletuffe/OpenTopoMap">&copy; OTM-R</a> <a href="https://openmaps.fr/donnate">❤️ Donation</a>',
     description: 'OpenTopoMap local adaptation and customization',
     numZoomLevels: 17
   },

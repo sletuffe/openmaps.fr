@@ -26,6 +26,7 @@ form { display: inline; margin: 0; }
 #search {
 	position: absolute;
 	top: 10px;
+	opacity: 0.8;
 	left: 50px;
 	z-index: 1008;
 	font-size:12px;
@@ -49,7 +50,7 @@ div#search li {
 	font-size:12px;
 	padding: 0 5px;
 }
-#attributions {
+#serverproblems {
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
@@ -58,11 +59,22 @@ div#search li {
 	z-index: 1008;
 	white-space: nowrap;
 	background: white;
-	opacity: 0.5;
+	opacity: 0.8;
 	padding: 5px;
 	padding-top: 0px;
 	width: 450px;
 	border-radius: 10px; 
+}
+#informations {
+	position: absolute;
+	opacity: 0.7;
+	top: 10px;
+	left: 300px;
+	z-index: 1008;
+	font-size:12px;
+	padding: 5px;
+	border-radius: 10px; 
+	background: white; 
 }
 
 a:link, a:visited {
@@ -133,10 +145,6 @@ function init()
 //  map.addcontrol(layerSwitcher);
   switcher.maximizeControl();
 
-  var permalink_potlatch = new OpenLayers.Control.Permalink("permalink.potlatch");
-  permalink_potlatch.base = "http://www.openstreetmap.org/edit";
-  map.addControl(permalink_potlatch); 
-
   var layers = [];
 
   /* Base layers inclusion */
@@ -149,7 +157,7 @@ function init()
         all_available_styles[idx].name,
         all_available_styles[idx].tile_urls,
         {
-            attribution: all_available_styles[idx].attribution + ' | Données <a href="http://www.openstreetmap.org/copyright">&copy; les contributeurs OpenStreetMap</a>',
+            attribution: all_available_styles[idx].attribution + ' | <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>',
             sphericalMercator: true,
             wrapDateLine: true,
             transitionEffect: "resize",
@@ -217,7 +225,7 @@ function refineSearch() {
   var q = $("input#q").val();
   $("#search_results").empty();
 
-  $.get('https://nominatim.openstreetmap.org/search.php?email=sylvain@letuffe.org&format=json&q='+q, function (data) { 
+  $.get('https://nominatim.openstreetmap.org/search.php?email=sylvain+openmaps@letuffe.org&format=json&q='+q, function (data) { 
     if (data[0]) {
       // map.setCenter(new OpenLayers.LonLat(data[0].lon,data[0].lat).transform( new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject() ), 12); 
       $("#search_results").append('<ul class="search_results">');
@@ -244,7 +252,6 @@ function mapMoved() {
 }
  // -->
  </script>
-
  </head>
 
 
@@ -263,20 +270,21 @@ function mapMoved() {
 </div>
 
 <!--
-<div id="attributions">
+<div id="serverproblems">
   <p>
     <font color="red">The server is currently in maintenance or experiencing problems</font>
   </p>
-  
 </div>
 -->
-<div id="permalinks">
-      <ul>
-        <li><a id="permalink" href="">Permalink</a></li>
-        <li><a id="permalink.potlatch" target="_blank" href="">Edit the map</a></li>
-      </ul>
+<div id="informations">
+  <p>
+    <a href="https://wiki.openstreetmap.org/wiki/OpenMapsFr">About openmaps.fr</a> | <a href="/donnate">❤️ Donation page</a> | <a href="/tile-usage-policy.html">Tile usage policy</a>
+  </p>
 </div>
-
+<div id="permalinks">
+  <p>
+    <a id="permalink" href="">Permalink</a>
+  </p>
+</div>
 </body>
-
 </html>

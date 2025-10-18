@@ -3,7 +3,6 @@
 #deny from all
 
 RewriteEngine On
-RewriteRule ^donnate$ donnate.html [L]
-
+RewriteRule ^donate$ donate.html [L]
 
 AddDefaultCharset UTF8

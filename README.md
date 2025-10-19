@@ -11,8 +11,8 @@ All styles and code are free and OpenSource (Check each one's specific license)
 
 ## Can it be used freely on another website/application ?
 
-I have no problem with that. However, it is at your own risk, the service might stop any time, or I might ban IP or web site if there are too much requests.
-Please use and read the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html)
+It was meant for that. However, there are no guarantees : the service might stop any time, or I might ban IP or web site if there are too much requests.
+If you include tiles from openmaps.fr in your project, you must read and accept the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html)
 
 * Since ~2023, due to increasing mass dowload applications targeting and hampering the OpenHikingMap server I had to take measures in order to give priority to "browsing users". The current limit is that asking more than 2000 not allready rendered tiles or 8000 tiles (Total) will get your connexion throttled to 1 Tile per 5 seconds or 5 per seconds respectively. I am sad to take such measures which could well lead to collateral damage but unfortunetly I haven't a strong enough server to handle that CPU load.
 

@@ -22,6 +22,21 @@ Current mod_tile config :
   ModTileThrottlingRenders 2000 0.2
 ```
 
+## Hardware used (From 2022 to 2025)
+
+Current server hosting the map is kindly privided by the company I work for, but during 2026 it will likely be decomissionned and shut down: 
+* Xeon 4 cores/8 threads @2.8 Ghz 
+* 96 GB DDR3 ECC
+* Hardware raid 5 of 4 12TB rotative disks (no ssd)
+* ~4TB used (600GB for OSM data in Postgres + 300GB contours in Postgres + 200GB of various shape and tif files + ~1500GB of Tiles of OpenHikingMap and ~1500GB for OpenTopoMap)
+
+Also, unfortunetly, this server is too slow for regular imports, too slow for high usage mainly because of the rotative disks. Such a setup requires NVMe drives.
+
+## 2026+
+That is why, as of 2025-10-21, I'm searching for alternatives. Either in the form of the cheapest server I can rent, or, if I get funds, 2 identical servers to organise redundancy and failover in case of problems, or during re-import or any type of upgrades.
+This OVHcloud server (costing ~ 1000€/year) or equivalent should do :
+* https://eco.ovhcloud.com/fr/soyoustart/sys-1/ (in Configuration 64GB RAM, 2 * 2To NVMe, 6 Xeon cores @3.7Ghz)
+
 ## Funding
 
 To help financing for server costs and maintaining the service functionnal, please chech the [Funding openmaps.fr](https://openmaps.fr/donate)

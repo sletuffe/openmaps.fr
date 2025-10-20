@@ -2,7 +2,7 @@
 title: Tile Usage Policy for the tile.openmaps.fr service
 ---
 
-OpenMaps.fr's maps : [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) and [OpenTopoMaps](https://github.com/sletuffe/OpenTopoMap) are free mapnik styles. But delivering tiles has a cost and our **servers are not free**: they are [funded by donations](https://openmaps.fr/donate), and capacity is limited. To protect the service from high usage and help fund server costs, you **must** follow this policy when using tiles from `tile.openmaps.fr`.
+[Openmaps.fr (See presentation page)](https://openmaps.fr/about-openmaps.fr.html) 's maps : [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) and [OpenTopoMaps](https://github.com/sletuffe/OpenTopoMap) are free mapnik styles. But delivering tiles has a cost and our **servers are not free**: they are [funded by donations](https://openmaps.fr/donate), and capacity is limited. To protect the service from high usage and help fund server costs, you **must** follow this policy when using tiles from `tile.openmaps.fr`.
 
 There is no precise definition of "high usage", but as a rule of thumb, downloading less that 500k tiles per month should be considered acceptable "low volume", higher than that, I might analyse what type of usage it is.
 
@@ -24,11 +24,17 @@ If you cannot meet these requirements, please use an **alternative OSM-derived s
 * Access OpenHikingMap with this URL  `https://tile.openmaps.fr/openhikingmap/{z}/{x}/{y}.png`. (Older URL will one day be removed)
 * Provide visible **licence attribution**, for OpenStreetMap contributors, for the style's information, and a donation link to encourage your users to contibute to the openmaps.fr server(s) cost.
 
-For OpenHikingMaps's attribution please use :
-> '<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donnate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
-
+For OpenHikingMaps's attribution please use the following html code:
+```
+'<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donnate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
+```
 For OpenTopoMaps's attribution please use 
-> '<a href="https://github.com/sletuffe/OpenTopoMap">&copy; OTM-R</a>&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donnate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
+```
+'<a href="https://github.com/sletuffe/OpenTopoMap">&copy; OTM-R</a>&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donnate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
+```
+
+In both attribution texte, there is a link to the style's explanation page, a donation link because users tends to know nothing about how are those map funded, and a attribution to OpenStreetMap datas.
+
 
 * Send a **valid HTTP User-Agent** that clearly identifies your application and not you library's default (e.g. `okhttp/x.y`, `Go-http-client/1.1`, `python-requests/`) 
 * From web pages, ensure a valid **HTTP Referer** header is sent.

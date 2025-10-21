@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile Usage Policy for the tile.openmaps.fr service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            /* Changed from 900px to 1100px for a wider page */
+            max-width: 1100px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        p, ul {
+            margin-bottom: 15px;
+        }
+        strong {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .note {
+            background-color: #f9e79f;
+            padding: 10px;
+            border-left: 5px solid #f39c12;
+            margin: 20px 0;
+        }
+        .must-do, .dont-do {
+            margin-left: 20px;
+            list-style-type: square;
+            color: #333;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c0392b;
+        }
+        .attribution-code {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #bdc3c7;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tile Usage Policy for the tile.openmaps.fr service</h1>
+
+        <p>
+            <a href="https://openmaps.fr/about-openmaps.fr.html">Openmaps.fr (See presentation page)</a> 's maps:
+            <a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a> and
+            <a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMaps</a> are free mapnik styles. But delivering tiles has a cost and our
+            <strong>servers are not free</strong>: they are
+            <a href="https://openmaps.fr/donate">funded by donations</a>, and capacity is limited. To protect the service from high usage and help fund server costs, you
+            <strong>must</strong> follow this policy when using tiles from <code>tile.openmaps.fr</code>.
+        </p>
+
+        <p>
+            There is no precise definition of "high usage", but as a rule of thumb, downloading less that 500k tiles per month should be considered acceptable "low volume", higher than that, I might analyse what type of usage it is.
+        </p>
+
+        <p>
+            OpenMaps.fr's maps are meant to be used for non commercial projects because our ressources are limited. If the usage of those tiles is for a free project (free as in "free beer") then that is ok.
+        </p>
+
+        <p>
+            You are not required to use a specific API, apikey, or prior subscription. However, heavy or inappropriate use harms others ability to view the map. We may block access, without notice, if your usage degrades the service. We may try to contact you if possible, but cannot guarantee this.
+        </p>
+
+        <div class="note">
+            <p>Availability is <strong>best-effort</strong>: there is <strong>no SLA or guarantee</strong>.</p>
+            <p>If you cannot meet these requirements, please use an <strong>alternative OSM-derived service</strong> (see below), or run your own.</p>
+        </div>
+
+        <hr>
+
+        <h2>1. Tile Usage Policy for the tile.openmaps.fr service</h2>
+
+        <h3>You must:</h3>
+        <ul class="must-do">
+            <li>Access OpenTopoMaps with this URL <code>https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png</code>.</li>
+            <li>Access OpenHikingMap with this URL <code>https://tile.openmaps.fr/openhikingmap/{z}/{x}/{y}.png</code>. (Older URL will one day be removed)</li>
+            <li>
+                Provide visible <strong>licence attribution</strong>, for OpenStreetMap contributors, for the style's information, and a donation link to encourage your users to contibute to the openmaps.fr server(s) cost.
+                <br><br>
+                For OpenHikingMaps's attribution please use the following html code:
+                <div class="attribution-code">
+                    <code>'&lt;a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap"&gt;&amp;copy; OpenHikingMap&lt;/a&gt; &lt;a href="https://openmaps.fr/donnate"&gt;&amp;hearts; Donation&lt;/a&gt; &lt;a href="http://www.openstreetmap.org/copyright"&gt;&amp;copy; OpenStreetMap&lt;/a&gt;'</code>
+                </div>
+                For OpenTopoMaps's attribution please use
+                <div class="attribution-code">
+                    <code>'&lt;a href="https://github.com/sletuffe/OpenTopoMap"&gt;&amp;copy; OTM-R&lt;/a&gt;&amp;copy; OpenHikingMap&lt;/a&gt; &lt;a href="https://openmaps.fr/donnate"&gt;&amp;hearts; Donation&lt;/a&gt; &lt;a href="http://www.openstreetmap.org/copyright"&gt;&amp;copy; OpenStreetMap&lt;/a&gt;'</code>
+                </div>
+                <p>
+                    In both attribution texte, there is a link to the style's explanation page, a donation link because users tends to know nothing about how are those map funded, and a attribution to OpenStreetMap datas.
+                </p>
+            </li>
+            <li>Send a <strong>valid HTTP User-Agent</strong> that clearly identifies your application and not you library's default (e.g. <code>okhttp/x.y</code>, <code>Go-http-client/1.1</code>, <code>python-requests/</code>)</li>
+            <li>From web pages, ensure a valid <strong>HTTP Referer</strong> header is sent.</li>
+        </ul>
+
+        <h3>And don't:</h3>
+        <ul class="dont-do">
+            <li>Bulk download ("scrape") tiles or offer prefetch features. apache mod_tile has been configure to rate limit high volume from single IP</li>
+            <li>Masquerade as another app's User-Agent, or rely on a library's default User-Agent.</li>
+        </ul>
+
+        <hr>
+
+        <h2>2. Changes and enforcement</h2>
+
+        <p>
+            This policy may change at any time to reflect project needs and constraints. Commercial services, or those that seek donations, should be especially aware that access may be withdrawn at any point: you may no longer be able to serve your paying customers if access is withdrawn.
+        </p>
+
+        <p>
+            We may try to contact you (for example, via your <code>User-Agent</code> or public contact details) if there is a problem, but this may not always be possible. Access may be <strong>blocked without prior notice</strong>.
+        </p>
+
+        <hr>
+
+        <h2>3. Alternatives: OSM-derived services</h2>
+
+        <h3>Hosted tile services based on OSM data</h3>
+        <ul>
+            <li>Community list: <a href="https://wiki.openstreetmap.org/wiki/Raster_tile_providers">https://wiki.openstreetmap.org/wiki/Raster_tile_providers</a></li>
+        </ul>
+
+        <h3>Commercial providers</h3>
+        <ul>
+            <li>See: <a href="https://wiki.openstreetmap.org/wiki/Commercial_OSM_Software_and_Services">Commercial OSM Software and Services</a> and <a href="http://switch2osm.org/providers/">https://switch2osm.org/providers/</a></li>
+        </ul>
+
+        <h3>Run your own tiles</h3>
+        <ul>
+            <li>Up-to-date guidance: <a href="http://switch2osm.org/">http://switch2osm.org/</a></li>
+        </ul>
+    </div>
+</body>
+</html>

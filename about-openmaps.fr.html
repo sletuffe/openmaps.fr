@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About openmaps.fr - Tile Map Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            /* Max width set to 1100px for a wide layout */
+            max-width: 1100px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db; /* Blue for section headers */
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        p, ul {
+            margin-bottom: 15px;
+        }
+        strong {
+            font-weight: bold;
+            color: #e74c3c; /* Reddish-orange for emphasis */
+        }
+        /* Custom list style for main body lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+        /* Specific styles for the rule lists (keeping structure for consistency) */
+        .rule-list {
+            margin-left: 20px;
+            list-style-type: square;
+            color: #333;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c0392b;
+        }
+        .code-block {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #bdc3c7;
+            margin: 30px 0;
+        }
+        /* Style for the status indicator */
+        .status-indicator {
+            background-color: lime; /* Keeping the lime background for the status */
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #333;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About openmaps.fr</h1>
+
+        <p>
+            <a href="https://openmaps.fr">Openmaps.fr</a> is a free <a href="https://wiki.openstreetmap.org/wiki/TMS">Tile Map Service</a> based on <a href="https://wiki.openstreetmap.org/">OpenStreetMap</a> datas providing 2 maps:
+        </p>
+        <ul class="rule-list">
+            <li><a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a> An almost clone of <a href="https://wiki.openstreetmap.org/wiki/OpenTopoMap">OpenTopoMap</a></li>
+            <li><a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a> Another map for hiking (<a href="https://github.com/sletuffe/OpenHikingMap">git repo</a>).</li>
+        </ul>
+
+        <p>
+            All styles and code are free and OpenSource (Check each one's specific license) on their github's repo.
+        </p>
+
+        <hr>
+
+        <h2>Can it be used freely on another website/application?</h2>
+
+        <p>
+            It was meant for that. However, there are no guarantees: the service might stop any time, or I might ban IP or web site if there are too many requests.
+        </p>
+
+        <p>
+            If you include tiles from tile.openmaps.fr in your project, you must read and accept the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a> where you will also find the TMS URLs for those two map styles.
+        </p>
+
+        <p>
+            Since ~2011, due to increasing mass download applications targeting and hampering the OpenHikingMap server I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 2000 not already rendered tiles or 8000 tiles (Total) will get your connection throttled to 1 Tile per 5 seconds or 5 per seconds respectively. I am sad to take such measures which could well lead to collateral damage but unfortunately I haven't a strong enough server to handle that CPU load.
+        </p>
+
+        <p>
+            Current mod_tile config:
+        </p>
+        <div class="code-block">
+            <code>
+                ModTileThrottlingTiles 8000 5<br>
+                ModTileThrottlingRenders 2000 0.2
+            </code>
+        </div>
+
+        <hr>
+
+        <h2>Hardware used (From 2022 to 2025)</h2>
+
+        <p>
+            Current server hosting the map is kindly provided by the company I work for, but during 2026 it will likely be decomissioned and shut down:
+        </p>
+        <ul class="rule-list">
+            <li>Xeon 4 cores/8 threads @2.8 Ghz</li>
+            <li>96 GB DDR3 ECC</li>
+            <li>Hardware raid 5 of 4 12TB rotative disks (no ssd)</li>
+            <li>~4TB used (600GB for OSM data in Postgres + 300GB contours in Postgres + 200GB of various shape and tif files + ~1500GB of Tiles of OpenHikingMap and ~1500GB for OpenTopoMap)</li>
+        </ul>
+
+        <p>
+            Also, unfortunately, this server is too slow for regular imports, too slow for high usage mainly because of the rotative disks. Such a setup requires NVMe drives.
+        </p>
+
+        <hr>
+
+        <h2>2026+</h2>
+
+        <p>
+            That is why, as of 2025-10-21, I'm searching for alternatives. Either in the form of the cheapest server I can rent, or, if I get funds, 2 identical servers to organise redundancy and failover in case of problems, or during re-import or any type of upgrades.
+        </p>
+        <p>
+            This <a href="https://eco.ovhcloud.com/fr/soyoustart/sys-1/">OVHcloud server</a> (costing ~ 1000€/year) or equivalent should do:
+        </p>
+        <ul class="rule-list">
+            <li>(in Configuration 64GB RAM, 2 * 2To NVMe, 6 Xeon cores @3.7Ghz)</li>
+        </ul>
+
+        <hr>
+
+        <h2>Funding</h2>
+
+        <p>
+            To help financing for server costs and maintaining the service functional, please check the <a href="https://openmaps.fr/donate">Funding openmaps.fr</a> page.
+        </p>
+
+        <hr>
+
+        <h2>Status of the tile.openmaps.fr service</h2>
+
+        <p>
+            * 2025-06-30 : <span class="status-indicator">server running OK</span>
+        </p>
+        <p>
+            * Datas are from 2025-04-15 (this information is manually updated if I don't forget !)
+        </p>
+    </div>
+</body>
+</html>

@@ -57,3 +57,12 @@ Examples to copy :
 <span style="background-color:orange;font-weight:bold; padding: 1pt">Service is SLOW : One crached disk brought the RAID0 array down, it was replaced but lots of tiles were lost and re-rendering is at full speed (which means it is very slow !)</span>
 <span style="background-color:red;font-weight:bold; padding: 1pt">* 2013-05-24 Service is DOWN : The RAID 0 array holding the database and tile failed due to a disk drive crash, waiting for replacement and database rebuild, might take a few days before back online</span>
 -->
+
+## Reporting problems or discussions about openmaps.fr
+* If you want to report problems about the tile.openmaps.fr tile service (outage, slow, unavailable) please use this [github OpenMaps tracker](https://github.com/sletuffe/openmaps.fr/issues)
+
+* If yo want to discuss or have questions, please use [the discussion pages on the same github repo](https://github.com/sletuffe/openmaps.fr/discussions/)
+
+* And if you want to contact me privately you can email me at [sylvain@openmaps.fr](sylvain@openmaps.fr)
+
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About openmaps.fr - Tile Map Service</title>
+    <title>About openmaps.fr</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,20 +40,19 @@
         p, ul {
             margin-bottom: 15px;
         }
+        /* Keeping strong style for potential manual use, but removing default usage for this request */
         strong {
             font-weight: bold;
-            color: #e74c3c; /* Reddish-orange for emphasis */
+            color: #e74c3c;
         }
-        /* Custom list style for main body lists */
         ul {
             list-style-type: disc;
             padding-left: 25px;
         }
-        /* Specific styles for the rule lists (keeping structure for consistency) */
         .rule-list {
-            margin-left: 20px;
             list-style-type: square;
-            color: #333;
+            padding-left: 25px;
+            margin-top: 15px;
         }
         code {
             background-color: #eee;
@@ -85,7 +84,7 @@
         }
         /* Style for the status indicator */
         .status-indicator {
-            background-color: lime; /* Keeping the lime background for the status */
+            background-color: lime;
             font-weight: bold;
             padding: 2px 5px;
             border-radius: 3px;
@@ -103,11 +102,11 @@
         </p>
         <ul class="rule-list">
             <li><a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a> An almost clone of <a href="https://wiki.openstreetmap.org/wiki/OpenTopoMap">OpenTopoMap</a></li>
-            <li><a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a> Another map for hiking (<a href="https://github.com/sletuffe/OpenHikingMap">git repo</a>).</li>
+            <li>and <a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a> Another map for hiking (<a href="https://github.com/sletuffe/OpenHikingMap">git repo</a>).</li>
         </ul>
 
         <p>
-            All styles and code are free and OpenSource (Check each one's specific license) on their github's repo.
+            All styles and code are free and OpenSource (Check each one's specific license) on their github's repo
         </p>
 
         <hr>
@@ -115,9 +114,8 @@
         <h2>Can it be used freely on another website/application?</h2>
 
         <p>
-            It was meant for that. However, there are no guarantees: the service might stop any time, or I might ban IP or web site if there are too many requests.
+            It was meant for that. However, there are no guarantees: the service might stop any time, or I might block IP or web site if there are too much requests.
         </p>
-
         <p>
             If you include tiles from tile.openmaps.fr in your project, you must read and accept the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a> where you will also find the TMS URLs for those two map styles.
         </p>
@@ -141,17 +139,17 @@
         <h2>Hardware used (From 2022 to 2025)</h2>
 
         <p>
-            Current server hosting the map is kindly provided by the company I work for, but during 2026 it will likely be decomissioned and shut down:
+            Current server hosting the map is kindly provided by the company I work for, but during 2026 it will likely be decomissionned and shut down:
         </p>
         <ul class="rule-list">
             <li>Xeon 4 cores/8 threads @2.8 Ghz</li>
             <li>96 GB DDR3 ECC</li>
-            <li>Hardware raid 5 of 4 12TB rotative disks (no ssd)</li>
+            <li>Hardware raid 5 of 4 12TB spinning disks (no ssd)</li>
             <li>~4TB used (600GB for OSM data in Postgres + 300GB contours in Postgres + 200GB of various shape and tif files + ~1500GB of Tiles of OpenHikingMap and ~1500GB for OpenTopoMap)</li>
         </ul>
 
         <p>
-            Also, unfortunately, this server is too slow for regular imports, too slow for high usage mainly because of the rotative disks. Such a setup requires NVMe drives.
+            Also, unfortunately, this server is too slow for regular imports, too slow for high usage mainly because of the spinning disks. Such a setup requires NVMe drives.
         </p>
 
         <hr>
@@ -180,12 +178,11 @@
 
         <h2>Status of the tile.openmaps.fr service</h2>
 
-        <p>
-            * 2025-06-30 : <span class="status-indicator">server running OK</span>
-        </p>
-        <p>
-            * Datas are from 2025-04-15 (this information is manually updated if I don't forget !)
-        </p>
+        <ul>
+            <li>RealTime uptime calculator : <a href="https://status.openmaps.fr/">https://status.openmaps.fr/</a> (gratefully provided by <a href="https://www.edmc73.com/">EDMC73 french FreeLance</a> )</li>
+            <li>2025-10-25 : <span class="status-indicator">server running OK</span></li>
+            <li>Datas are from 2025-04-15 (this information is manually updated if I don't forget !)</li>
+        </ul>
     </div>
 </body>
 </html>

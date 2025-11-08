@@ -63,6 +63,6 @@ Examples to copy :
 
 * If yo want to discuss or have questions, please use [the discussion pages on the same github repo](https://github.com/sletuffe/openmaps.fr/discussions/)
 
-* And if you want to contact me privately you can email me at [sylvain@openmaps.fr](sylvain@openmaps.fr)
+* And if you want to contact me privately you can email me at [sly@openmaps.fr](sly@openmaps.fr)
 
 

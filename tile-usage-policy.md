@@ -26,11 +26,11 @@ If you cannot meet these requirements, please use an **alternative OSM-derived s
 
 For OpenHikingMaps's attribution please use the following html code:
 ```
-'<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donnate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
+'<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
 ```
 For OpenTopoMaps's attribution please use 
 ```
-'<a href="https://github.com/sletuffe/OpenTopoMap">&copy; OTM-R</a>&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donnate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
+'<a href="https://github.com/sletuffe/OpenTopoMap">&copy; OTM-R</a>&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
 ```
 
 In both attribution texte, there is a link to the style's explanation page, a donation link because users tends to know nothing about how are those map funded, and a attribution to OpenStreetMap datas.

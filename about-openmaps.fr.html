@@ -120,7 +120,8 @@
         </p>
 
         <p>
-            Since ~2011, due to increasing mass download applications targeting and hampering the OpenHikingMap server I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 2000 not already rendered tiles or 8000 tiles (Total) will get your connection throttled to 1 Tile per 5 seconds or 5 per seconds respectively. I am sad to take such measures which could well lead to collateral damage but unfortunately I haven't a strong enough server to handle that CPU load.
+            Since ~2011, due to increasing mass download applications targeting and hampering the OpenHikingMap server I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 2000 not already rendered tiles or 8000 tiles (Total) will get your connection throttled to 1 Tile per second or 5 per seconds respectively. I am sad to take such measures which could well lead to collateral damage but unfortunately I haven't a strong enough server to handle that CPU load.
+            (live config should be in the config/common-for-tiles.conf file)
         </p>
 
         <p>
@@ -128,17 +129,17 @@
         </p>
         <div class="code-block">
             <code>
-                ModTileThrottlingTiles 8000 5<br>
+                ModTileThrottlingTiles 8000 1<br>
                 ModTileThrottlingRenders 2000 0.2
             </code>
         </div>
 
         <hr>
 
-        <h2>Hardware used (From 2022 to 2025)</h2>
+        <h2>Hardware used (From 2022 until now)</h2>
 
         <p>
-            Current server hosting the map is kindly provided by the company I work for, but during 2026 it will likely be decomissionned and shut down:
+            Current server hosting the map is kindly provided by <a href="https://www.gplservice.fr">Gplservice</a>, the company I work for, but during 2026 it might be decomissionned and shut down:
         </p>
         <ul class="rule-list">
             <li>Xeon 4 cores/8 threads @2.8 Ghz</li>
@@ -153,16 +154,14 @@
 
         <hr>
 
-        <h2>2026+</h2>
+        <h2>For the future</h2>
 
         <p>
-            That is why, as of 2025-10-21, I'm searching for alternatives. Either in the form of the cheapest server I can rent, or, if I get funds, 2 identical servers to organise redundancy and failover in case of problems, or during re-import or any type of upgrades.
-        </p>
-        <p>
-            This <a href="https://eco.ovhcloud.com/fr/soyoustart/sys-1/">OVHcloud server</a> (costing ~ 1000€/year) (in Configuration 64GB RAM, 2 * 2To NVMe, 6 Xeon cores @3.7Ghz)
+            That is why, as of 2025-10-21, I'm searching for alternatives. Either in the form of the cheapest server I can rent, or, if I get enough funds, 2 identical servers to organise redundancy and failover in case of problems, or during re-import or any type of upgrades.
         </p>
         <ul class="rule-list">
-            <li><a href="https://eco.ovhcloud.com/fr/soyoustart/sys-1/">https://eco.ovhcloud.com/fr/soyoustart/sys-1/</a> (in Configuration 64GB RAM, 2 * 2To NVMe, 6 Xeon cores @3.7Ghz)</li>
+            <li>This OVHcloud server: <a href="https://eco.ovhcloud.com/fr/soyoustart/sys-1/">https://eco.ovhcloud.com/fr/soyoustart/sys-1/</a> (costing ~ 1000€/year) (in Configuration 64GB RAM, 2 * 2To NVMe, 6 Xeon cores @3.7Ghz)</li>
+            <li>or maybe this Hetzner server: <a href="https://www.hetzner.com/dedicated-rootserver/ex44/configurator/#/">https://www.hetzner.com/dedicated-rootserver/ex44/configurator/#/</a> (cosing ~ 1100/year)</li>
         </ul>
 
         <hr>

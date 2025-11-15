@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenMaps.fr : An OpenHikingMap and OpenTopoMap-R TMS map rendering - demo slippy map</title>
+    <title>Full Screen Leaflet Map with Advanced Controls</title>
     
     <link rel="stylesheet" href="./styles/leaflet.css"/>
     <link rel="stylesheet" href="./styles/Control.Geocoder.css" />
@@ -22,7 +22,8 @@
         #info-links-container {
             position: absolute;
             top: 10px; 
-            left: 120px; 
+            /* CORRECTION: Décalage à 6% */
+            left: 6%; 
             z-index: 1001; 
             
             background-color: rgba(255, 255, 255, 0.7); 
@@ -55,7 +56,7 @@
         /* Style for the Zoom Level Display (Z) */
         #zoom-level-display {
             position: absolute;
-            top: 250px; 
+            top: 250px; /* Position par défaut pour grand écran */
             left: 10px;
             z-index: 1001; 
             font-weight: bold;
@@ -65,6 +66,26 @@
             font-family: Arial, sans-serif;
             font-size: 14px;
             border: 1px solid #ccc;
+        }
+        
+        /* ======================================================= */
+        /* MEDIA QUERY POUR ÉCRANS ÉTROITS (Responsive) */
+        /* ======================================================= */
+        @media (max-width: 768px) {
+            
+            /* Décalage des zones de contrôles (Zoomslider et Sélecteur de couches) */
+            .leaflet-top.leaflet-left {
+                top: 60px; 
+            }
+            
+            .leaflet-top.leaflet-right {
+                top: 60px;
+            }
+
+            /* CORRECTION : Décalage du niveau de zoom (Z) pour éviter le bandeau multi-ligne */
+            #zoom-level-display {
+                top: 310px; /* Ajusté à 310px pour un bon dégagement */
+            }
         }
     </style>
 </head>
@@ -111,7 +132,7 @@
             "OpenStreetMap (Standard)": {
                 code: 'openstreetmap-standard', 
                 url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                attribution: '© <a href="/copyright">OpenStreetMap contributors</a> ♥ <a href="https://supporting.openstreetmap.org">Donation</a>. <a href="https://wiki.osmfoundation.org/wiki/Terms_of_Use">Term of use</a>',
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
                 tms: false
             }
         };

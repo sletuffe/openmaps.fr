@@ -108,7 +108,7 @@
     <script src="./libs/L.Control.MousePosition.js"></script>
 
     <script>
-        // --- 1. CONFIGURATION OF TILE LAYERS (Updated with 'code' property) ---
+        // --- 1. CONFIGURATION OF TILE LAYERS ---
         
         const tileLayersConfig = {
             "OpenHikingMap": {
@@ -158,11 +158,12 @@
         }).setView(initialCoordinates, initialZoom);
 
         
-        // --- 3. ADDING TILE LAYERS AND LAYER CONTROL ---
+        // --- 3. ADDING TILE LAYERS (CORRECTION APPLIQUÉE ICI) ---
         
         let baseMaps = {};
         let defaultLayer;
 
+        // 3.1 Création des objets couches (sans les ajouter à la carte)
         for (const name in tileLayersConfig) {
             const config = tileLayersConfig[name];
             const layer = L.tileLayer(config.url, {
@@ -175,29 +176,51 @@
 
             if (!defaultLayer) {
                 defaultLayer = layer;
-                layer.addTo(map); 
             }
         }
 
         // Active layer name defaults to the first one defined
         let activeLayerName = Object.keys(tileLayersConfig)[0]; 
+        let layerToLoad = defaultLayer; // La couche à charger est par défaut la première
+        
+        // --- 4. ADVANCED CONTROLS & HASH LOADING (Correction consolidée ici) ---
 
-        // Add Layer Control (Selector) - Open by default
+        // 4.1. Initialize map state from URL Hash on load
+        if (window.location.hash) {
+            const hashParts = window.location.hash.substring(1).split('/');
+            
+            const hashLayerCode = hashParts[0];
+            const hashLayerName = layerNamesByCode[hashLayerCode]; 
+            
+            if (baseMaps[hashLayerName]) {
+                activeLayerName = hashLayerName;
+                layerToLoad = baseMaps[hashLayerName]; // Utilise la couche du hash
+                
+                const zoom = parseInt(hashParts[1]);
+                const lat = parseFloat(hashParts[2]);
+                const lng = parseFloat(hashParts[3]);
+
+                // Positionne la carte selon le hash (avant l'ajout de la couche pour éviter un flash)
+                map.setView([lat, lng], zoom);
+            }
+        }
+
+        // 4.2. AJOUT FINAL DE LA COUCHE (Unique)
+        layerToLoad.addTo(map);
+
+        // 4.3. Add Layer Control (Selector)
         const layerControl = L.control.layers(baseMaps, null, {
             collapsed: false
         }).addTo(map);
 
         
-        // --- 4. ADVANCED CONTROLS (Permalinks, Z-Display, MousePosition, Zoomslider, Scale, Geocoding) ---
-
-        // 4.1. Permalinks (URL Hash) - Logic uses layer codes
+        // 4.4. Permalinks (URL Hash) - Logic uses layer codes
         
         // Function to update the hash: #LayerCode/z/lat/lon
         function updateHash() {
             const mapCenter = map.getCenter();
             const zoom = map.getZoom();
             
-            // Use the clean code instead of the display name
             const layerCode = layerCodes[activeLayerName];
             
             const newHash = layerCode + '/' + 
@@ -216,33 +239,7 @@
         });
 
 
-        // 4.2. Initialize map state from URL Hash on load
-        if (window.location.hash) {
-            const hashParts = window.location.hash.substring(1).split('/');
-            
-            // The first part is now the layer code
-            const hashLayerCode = hashParts[0];
-            const hashLayerName = layerNamesByCode[hashLayerCode]; // Lookup the full name
-            
-            if (baseMaps[hashLayerName]) {
-                activeLayerName = hashLayerName;
-                const zoom = parseInt(hashParts[1]);
-                const lat = parseFloat(hashParts[2]);
-                const lng = parseFloat(hashParts[3]);
-
-                // Remove the default layer and add the hashed layer
-                map.eachLayer(function(layer) {
-                    if (layer !== defaultLayer) map.removeLayer(layer);
-                });
-                baseMaps[hashLayerName].addTo(map);
-                
-                // Set the view
-                map.setView([lat, lng], zoom);
-            }
-        }
-        
-        
-        // 4.3. Zoom Level Display (Z)
+        // 4.5. Zoom Level Display (Z)
         const zoomDisplay = document.getElementById('zoom-level-display');
 
         function updateZoomDisplay() {
@@ -253,7 +250,7 @@
         updateZoomDisplay();
 
 
-        // 4.4. Mouse Position (Coordinates)
+        // 4.6. Mouse Position (Coordinates)
         L.control.mousePosition({
             position: 'bottomright',
             separator: ' | ',
@@ -261,13 +258,13 @@
         }).addTo(map);
 
 
-        // 4.5. Zoomslider
+        // 4.7. Zoomslider
         L.control.zoomslider({
             position: 'topleft' 
         }).addTo(map);
         
         
-        // 4.6. Scale and Geocoding
+        // 4.8. Scale and Geocoding
         L.control.scale({
             imperial: false, 
             position: 'bottomleft'
@@ -282,5 +279,7 @@
         }).addTo(map);
 
     </script>
+</body>
+</html>
 </body>
 </html>

@@ -9,7 +9,6 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link href="style.css" type="text/css" rel="stylesheet"/>
     <style>
-        /* CSS regroupé pour la légende */
         body {
             font-family: Arial, sans-serif;
             color: #333;
@@ -44,7 +43,7 @@
             padding-bottom: 5px;
         }
         
-        /* Conteneur principal pour les éléments de la légende */
+        /* legend elements */
         .legend-list {
             list-style: none;
             padding: 0;
@@ -54,7 +53,7 @@
             font-size: 0.9em;
         }
 
-        /* Style pour chaque paire icône/texte (similaire à une cellule de tableau) */
+        /* icon / text  */
         .legend-item {
             display: flex;
             align-items: center;
@@ -63,7 +62,6 @@
             padding: 5px 10px 5px 0;
         }
 
-        /* Style par défaut pour les images (appliqué aux Areas et Symbols) */
         .legend-item img {
             margin-right: 8px;
             height: 20px;
@@ -71,17 +69,17 @@
             flex-shrink: 0;
         }
 
-        /* Style spécifique pour les images de lignes et de chemins/routes (hauteur auto) */
+        /* Style for lines road and paths*/
         .line-and-path-img img {
-            height: auto; /* Conserve la hauteur d'origine de l'image */
-            max-height: 20px; /* Empêche les images trop grandes */
-            width: auto; /* Conserve la largeur proportionnelle */
+            height: auto;
+            max-height: 20px; /* too big images */
+            width: auto; 
         }
 
-        /* Styles spécifiques pour les Routes/Paths (qui ont une mise en page 2 colonnes) */
+        /* for roads and paths */
         .roads-paths-list {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* 2 colonnes */
+            grid-template-columns: 1fr 1fr; /* 2 columns */
             gap: 10px 20px;
             list-style: none;
             padding: 0;
@@ -95,10 +93,9 @@
             padding: 5px 0;
         }
         
-        /* Applique le style 'height: auto' aux images dans .roads-paths-item */
         .roads-paths-item img {
             margin-right: 8px;
-            height: auto; /* Conserve la hauteur d'origine de l'image */
+            height: auto;
             max-height: 20px;
             width: auto;
             object-fit: contain;
@@ -249,6 +246,5 @@
             <li class="legend-item"><img src="./legend-images/schornstein.png" alt="Chimney Icon">Chimney</li>
         </ul>
     </div>
-
 </body>
 </html>

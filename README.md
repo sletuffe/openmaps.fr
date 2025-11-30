@@ -35,8 +35,8 @@ Also, unfortunetly, this server is too slow for regular imports, too slow for hi
 
 ## For the future
 That is why, as of 2025-10-21, I'm searching for alternatives. Either in the form of the cheapest server I can rent, or, if I get enough funds, 2 identical servers to organise redundancy and failover in case of problems, or during re-import or any type of upgrades.
-This OVHcloud server : https://eco.ovhcloud.com/fr/soyoustart/sys-1/ (costing ~ 1000€/year) (in Configuration 64GB RAM, 2 * 2To NVMe, 6 Xeon cores @3.7Ghz)
-or maybe this Hetzner server : https://www.hetzner.com/dedicated-rootserver/ex44/configurator/#/  (cosing ~ 1100/year)
+* This OVHcloud server : https://eco.ovhcloud.com/fr/soyoustart/sys-1/ (costing ~ 1000€/year) (in Configuration 64GB RAM, 2 * 2To NVMe, 6 Xeon cores @3.7Ghz)
+* or maybe this Hetzner server : https://www.hetzner.com/dedicated-rootserver/ex44/configurator/#/  (cosing ~ 1100/year)
 
 ## Funding
 

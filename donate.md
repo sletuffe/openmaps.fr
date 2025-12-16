@@ -11,10 +11,10 @@ Please note: These two platforms will ask for an email address. You can perfectl
 
 ## What are those funds used for ?
 
-As of 2025 :
+As of December 2025 :
 
 * Server cost (hosting and renting)
-See [Openmaps.fr (See presentation page)](https://openmaps.fr/about-openmaps.fr.html) for details about the server needed ( ~1000 € /year)
+See [Openmaps.fr (See presentation page)](https://openmaps.fr/about-openmaps.fr.html) for details about the current used server ( 889 € /year) or the [2026 year's bill](https://openmaps.fr/Facture_FR74417751.pdf) (redacted from my personnal informations for privacy).
 And if I could afford a 2nd identical server, I would ensure a better redundancy during problems, or re-import or any type of upgrades.
 
 * Domain name openmaps.fr (~8€ /year)

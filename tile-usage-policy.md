@@ -22,7 +22,7 @@ If you cannot meet these requirements, please use an **alternative OSM-derived s
 
 * Access OpenTopoMaps with this URL `https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png`.
 * Access OpenHikingMap with this URL  `https://tile.openmaps.fr/openhikingmap/{z}/{x}/{y}.png`. (Older URL will one day be removed)
-* Provide visible **licence attribution**, for OpenStreetMap contributors, for the style's information, and a donation link to encourage your users to contibute to the openmaps.fr server(s) cost.
+* Provide visible and readable attribution without requiring individuals to interact with the map or produced work to see the **licence attribution**, for OpenStreetMap contributors, for the style's information, and a donation link to encourage your users to contibute to the openmaps.fr server(s) cost. (In the same way you would with the [OSM Attrubution guidelines](https://osmfoundation.org/wiki/Licence/Attribution_Guidelines)
 
 For OpenHikingMaps's attribution please use the following html code:
 ```

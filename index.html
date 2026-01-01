@@ -115,25 +115,30 @@
                 code: 'openhikingmap', 
                 url: 'https://tile.openmaps.fr/openhikingmap/{z}/{x}/{y}.png',
                 attribution: '<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>',
-                tms: false 
+                tms: false ,
+                maxzoom: 18
             },
             "OpenTopoMap-R": {
                 code: 'opentopomap-r', 
                 url: 'https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png',
                 attribution: '<a href="https://github.com/sletuffe/OpenTopoMap">&copy; OpenTopoMap-R</a> <a href="https://openmaps.fr/donate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> <a href="https://openmaps.fr/otm/legend.html">Legend</a>',
-                tms: false
+                tms: false,
+                maxzoom: 18
+                
             },
             "OpenTopoMap Official": {
                 code: 'opentopomap-org', 
                 url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
                 attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
-                tms: false
+                tms: false,
+                maxzoom: 17
             },
             "OpenStreetMap (Standard)": {
                 code: 'openstreetmap-standard', 
                 url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-                tms: false
+                tms: false,
+                maxzoom: 19
             }
         };
 
@@ -169,7 +174,7 @@
             const layer = L.tileLayer(config.url, {
                 attribution: config.attribution,
                 tms: config.tms, 
-                maxZoom: 19
+                maxZoom: config.maxzoom
             });
 
             baseMaps[name] = layer;

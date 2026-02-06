@@ -14,7 +14,6 @@
             color: #333;
         }
         .container {
-            /* Changed from 900px to 1100px for a wider page */
             max-width: 1100px;
             margin: auto;
             background: #fff;
@@ -90,20 +89,20 @@
         <h1>Tile Usage Policy for the tile.openmaps.fr service</h1>
 
         <p>
-            <a href="https://openmaps.fr/about-openmaps.fr.html">Openmaps.fr (See presentation page)</a> 's maps:
-            <a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a> and
-            <a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMaps</a> are free mapnik styles. But delivering tiles has a cost and our
-            <strong>servers are not free</strong>: they are
-            <a href="https://openmaps.fr/donate">funded by donations</a>, and capacity is limited. To protect the service from high usage and help fund server costs, you
+            <a href="https://openmaps.fr/about-openmaps.fr.html">Openmaps.fr (See presentation page)</a> 's maps: 
+            <a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a> and 
+            <a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMaps</a> are free software mapnik styles. But delivering tiles has a cost and our 
+            <strong>servers are not free</strong>: they are 
+            <a href="https://openmaps.fr/donate">funded by donations</a>, and capacity is limited. To protect the service from high usage and help fund server costs, you 
             <strong>must</strong> follow this policy when using tiles from <code>tile.openmaps.fr</code>.
         </p>
 
         <p>
-            There is no precise definition of "high usage", but as a rule of thumb, downloading less that 300k tiles per month should be considered acceptable "low volume", higher than that, I might analyse what type of usage it is.
+            OpenMaps.fr's maps are meant to be used freely for non commercial projects because our ressources are limited. If the usage of those tiles is for a free projects (free as in "free beer") and the volume not too high, usage should be allowed.
         </p>
 
         <p>
-            OpenMaps.fr's maps are meant to be used for non commercial projects because our ressources are limited. If the usage of those tiles is for a free project (free as in "free beer") then that is ok.
+            There is no precise definition for this "too high volume", but as a rule of thumb, downloading less that <strong>500k tiles per month</strong> will be considered acceptable "low volume", for higher volume in free projects, we might need an arangement.
         </p>
 
         <p>
@@ -124,15 +123,15 @@
             <li>Access OpenTopoMaps with this URL <code>https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png</code>.</li>
             <li>Access OpenHikingMap with this URL <code>https://tile.openmaps.fr/openhikingmap/{z}/{x}/{y}.png</code>. (Older URL will one day be removed)</li>
             <li>
-                Provide visible and readable attribution without requiring individuals to interact with the map or produced work to see the <b>licence attribution</b>, for OpenStreetMap contributors, for the style's information, and a donation link to encourage your users to contibute to the openmaps.fr server(s) cost. (In the same way you must with the <a href="https://osmfoundation.org/wiki/Licence/Attribution_Guidelines">OSM Attribution guidelines</a>)
+                Provide visible and readable attribution without requiring individuals to interact with the map or produced work to see the <b>licence attribution</b>, for OpenStreetMap contributors, for the style's information, and a donation link to encourage your users to contibute to the openmaps.fr server(s) cost. (In the same way you would with the <a href="https://osmfoundation.org/wiki/Licence/Attribution_Guidelines">OSM Attribution guidelines</a>)
                 <br><br>
                 For OpenHikingMaps's attribution please use the following html code:
                 <div class="attribution-code">
                     <code>'&lt;a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap"&gt;&amp;copy; OpenHikingMap&lt;/a&gt; &lt;a href="https://openmaps.fr/donate"&gt;❤️ Donation&lt;/a&gt; &lt;a href="http://www.openstreetmap.org/copyright"&gt;&amp;copy; OpenStreetMap&lt;/a&gt;'</code>
                 </div>
-                For OpenTopoMaps's attribution please use
+                For OpenTopoMaps's attribution please use:
                 <div class="attribution-code">
-                    <code>'&lt;a href="https://github.com/sletuffe/OpenTopoMap"&gt;/a&gt;&amp;copy; OpenTopoMap-R&lt;/a&gt; &lt;a href="https://openmaps.fr/donate"&gt;❤️ Donation&lt;/a&gt; &lt;a href="http://www.openstreetmap.org/copyright"&gt;&amp;copy; OpenStreetMap&lt;/a&gt;'</code>
+                    <code>'&lt;a href="https://github.com/sletuffe/OpenTopoMap"&gt;&amp;copy; OpenTopoMap-R&lt;/a&gt; &lt;a href="https://openmaps.fr/donate"&gt;❤️ Donation&lt;/a&gt; &lt;a href="http://www.openstreetmap.org/copyright"&gt;&amp;copy; OpenStreetMap&lt;/a&gt;'</code>
                 </div>
                 <p>
                     In both attribution texte, there is a link to the style's explanation page, a donation link because users tends to know nothing about how are those map funded, and a attribution to OpenStreetMap datas.

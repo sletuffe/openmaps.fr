@@ -7,19 +7,19 @@ and
 * [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) Another map for hiking [git repo](https://github.com/sletuffe/OpenHikingMap).
 
 
-All styles and code are free and OpenSource (Check each one's specific license) on their github's repo
+All styles and code are release as free software (Check each one's specific license) on their github's repo
 
 ## Can it be used freely in another website/application ?
 
 The service is designed for third-party use. However, there are no guarantees : the service might stop any time, or I might block IP or web site if there are too much requests.
 If you include tiles from tile.openmaps.fr in your project, you must accept and respect the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html) where you will also find the TMS URLs for those two map styles.
 
-* Since ~2011, due to increasing mass dowload applications targeting and hampering the OpenHikingMap server I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 1000 not allready rendered tiles or 4000 tiles (Total) will get your connexion throttled to 0.2 Tile per seconds or 0.5 per seconds respectively. I regret having to implement these restrictions, as they may affect legitimate users; unfortunately, the current server capacity is insufficient to handle such high CPU loads.
+* Since ~2011, due to increasing mass dowload applications targeting and hampering the OpenHikingMap server I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 1000 not allready rendered tiles or 2000 tiles (Total) will get your connexion throttled to 0.2 Tile per seconds or 0.5 per seconds respectively. I regret having to implement these restrictions, as they may affect legitimate users; unfortunately, the current server capacity is insufficient to handle such high CPU loads.
 (live config should be in the config/common-for-tiles.conf file)
 
 Current mod_tile config :
 ```
-  ModTileThrottlingTiles 4000 0.5
+  ModTileThrottlingTiles 2000 0.5
   ModTileThrottlingRenders 1000 0.2
 ```
 

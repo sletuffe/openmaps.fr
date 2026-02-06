@@ -14,7 +14,6 @@
             color: #333;
         }
         .container {
-            /* Max width set to 1100px for a wide layout */
             max-width: 1100px;
             margin: auto;
             background: #fff;
@@ -29,7 +28,7 @@
             margin-bottom: 20px;
         }
         h2 {
-            color: #3498db; /* Blue for section headers */
+            color: #3498db;
             border-bottom: 2px solid #ecf0f1;
             padding-bottom: 5px;
             margin-top: 30px;
@@ -44,14 +43,11 @@
             font-weight: bold;
             color: #e74c3c;
         }
-        ul {
-            list-style-type: disc;
-            padding-left: 25px;
-        }
-        .rule-list {
-            list-style-type: square;
-            padding-left: 25px;
-            margin-top: 15px;
+        .note {
+            background-color: #f9e79f;
+            padding: 10px;
+            border-left: 5px solid #f39c12;
+            margin: 20px 0;
         }
         code {
             background-color: #eee;
@@ -60,13 +56,12 @@
             font-family: 'Courier New', monospace;
             color: #c0392b;
         }
-        .code-block {
+        pre {
             background-color: #ecf0f1;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
-            margin-top: 5px;
-            font-size: 0.9em;
+            font-family: 'Courier New', monospace;
         }
         a {
             color: #3498db;
@@ -81,14 +76,11 @@
             background-color: #bdc3c7;
             margin: 30px 0;
         }
-        /* Status indicator style */
-        .status-indicator {
-            background-color: lime;
-            font-weight: bold;
-            padding: 2px 5px;
-            border-radius: 3px;
-            color: #333;
+        .status-badge {
             display: inline-block;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 3px;
         }
     </style>
 </head>
@@ -97,103 +89,85 @@
         <h1>About openmaps.fr</h1>
 
         <p>
-            <a href="https://openmaps.fr">Openmaps.fr</a> is a free <a href="https://wiki.openstreetmap.org/wiki/TMS">Tile Map Service</a> based on <a href="https://wiki.openstreetmap.org/">OpenStreetMap</a> data providing 2 maps:
+            <a href="https://openmaps.fr">Openmaps.fr</a> is a free <a href="https://wiki.openstreetmap.org/wiki/TMS">Tile Map Service</a> based on <a href="https://wiki.openstreetmap.org/">OpenStreetMap</a> datas providing 2 maps:
         </p>
-        <ul class="rule-list">
-            <li><a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a> An almost clone of <a href="https://wiki.openstreetmap.org/wiki/OpenTopoMap">OpenTopoMap</a></li>
-            <li>and <a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a> Another map for hiking (<a href="https://github.com/sletuffe/OpenHikingMap">git repo</a>).</li>
+
+        <ul>
+            <li><a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a>: An almost clone of <a href="https://wiki.openstreetmap.org/wiki/OpenTopoMap">OpenTopoMap</a></li>
+            <li><a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a>: Another map for hiking (<a href="https://github.com/sletuffe/OpenHikingMap">git repo</a>)</li>
         </ul>
 
-        <p>
-            All styles and code are free and Open Source (Check each specific license) on their GitHub repositories.
-        </p>
+        <p>All styles and code are released as free software (Check each one's specific license) on their GitHub repositories.</p>
 
         <hr>
 
-        <h2>Can it be used freely in another website/application?</h2>
+        <h2>Can it be used freely in another website/application ?</h2>
 
         <p>
-            The service is designed for third-party use. However, there are no guarantees: the service might stop at any time, and I reserve the right to block IPs or websites in the event of excessive requests.
-        </p>
-        <p>
-            If you include tiles from tile.openmaps.fr in your project, you must accept and respect the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a> where you will also find the TMS URLs for those two map styles.
+            The service is designed for third-party use. However, there are no guarantees: the service might stop any time, or I might block IP or web site if there are too much requests. 
+            If you include tiles from <code>tile.openmaps.fr</code> in your project, you <strong>must</strong> accept and respect the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a> where you will also find the TMS URLs for those two map styles.
         </p>
 
-        <p>
-            Since ~2011, due to increasing mass download applications targeting and hampering the OpenHikingMap server, I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 1000 unrendered tiles or 4000 total tiles will get your connection throttled to 0.2 tiles per second or 0.5 per second respectively. I regret having to implement these restrictions, as they may affect legitimate users; unfortunately, the current server capacity is insufficient to handle such high CPU loads.
-            (live config should be in the <code>config/common-for-tiles.conf</code> file)
-        </p>
-
-        <p>Current mod_tile config:</p>
-        <div class="code-block">
-            <code>
-                ModTileThrottlingTiles 4000 0.5<br>
-                ModTileThrottlingRenders 1000 0.2
-            </code>
+        <div class="note">
+            Since ~2011, due to increasing mass download applications targeting and hampering the OpenHikingMap server, I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 1000 not already rendered tiles or 2000 tiles (Total) will get your connection throttled to 0.2 Tile per second or 0.5 per second respectively.
         </div>
+
+        <p>Current <code>mod_tile</code> config:</p>
+<pre>
+ModTileThrottlingTiles 2000 0.5
+ModTileThrottlingRenders 1000 0.2
+</pre>
 
         <hr>
 
         <h2>Hardware used from 2025-12-15 until ??</h2>
         <p>
-            \o/ I took advantage of OVHcloud's Black Friday offers and secured a SYS-LE-5. It is an 8-core Xeon E-2288G + 3 * 2TB NVMe + 64 GB RAM for 889 € / year. 
+            \o/ I took advantage of OVHcloud's Blackfriday offers and got me a SYS-LE-5. It is a <strong>8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM</strong> for 889 € / year. 
             This should be ideal for handling intensive rendering and high usage.
         </p>
 
-        <hr>
-
         <h2>Old hardware used (From 2022 to 2025-12-15)</h2>
-
-        <p>
-            This server was kindly provided by <a href="https://www.gplservice.fr">Gplservice</a>, the company I work for, but during 2026 it might be decommissioned and shut down:
-        </p>
-        <ul class="rule-list">
-            <li>Xeon 4 cores/8 threads @2.8 GHz</li>
+        <p>This server was kindly provided by <a href="https://www.gplservice.fr">Gplservice</a>, the company I work for, but during 2026 it might be decommissioned and shut down:</p>
+        <ul>
+            <li>Xeon 4 cores/8 threads @2.8 Ghz</li>
             <li>96 GB DDR3 ECC</li>
-            <li>Hardware RAID 5 of 4 12TB spinning disks (no SSD)</li>
-            <li>~4TB used (600GB for OSM data in Postgres + 300GB contours in Postgres + 200GB shape/tif files + ~1500GB Tiles per map style)</li>
+            <li>Hardware raid 5 of 4 12TB spinning disks (no ssd)</li>
+            <li>~4TB used (600GB for OSM data, 300GB contours, 200GB various shapes/tif, ~3000GB for tiles)</li>
         </ul>
 
         <hr>
 
         <h2>Funding</h2>
-
-        <p>
-            To help finance server costs and maintain the service, please check the <a href="https://openmaps.fr/donate">Funding openmaps.fr</a> page.
-        </p>
+        <p>To help financing for server costs and maintaining the service functional, please check the <a href="https://openmaps.fr/donate">Funding openmaps.fr</a> page.</p>
 
         <hr>
 
         <h2>Status of the tile.openmaps.fr service</h2>
-
         <ul>
-            <li>RealTime uptime calculator: <a href="https://status.openmaps.fr/">https://status.openmaps.fr/</a> (gratefully provided by <a href="https://www.edmc73.com/">EDMC73 French Freelance</a>)</li>
-            <li>2025-12-16: <span class="status-indicator">server running OK</span></li>
-            <li>Data is from ~2025-11-01 (this information is manually updated if I don't forget!)</li>
+            <li>RealTime uptime calculator: <a href="https://status.openmaps.fr/">https://status.openmaps.fr/</a> (gratefully provided by <a href="https://www.edmc73.com/">EDMC73 french FreeLance</a>)</li>
+            <li>2025-12-16: <span class="status-badge" style="background-color:lime;">server running OK</span></li>
+            <li>Datas are from ~2025-11-01 (this information is manually updated if I don't forget!)</li>
         </ul>
 
         <hr>
 
         <h2>FAQ</h2>
-        
-        <h3>Is there an offline version?</h3>
-        <p>
-            Those maps are generated by Mapnik in millions of PNG 256x256 tiles; storing all of them worldwide is impractical. As per the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a>, you can download small areas for offline use, provided you stay within the download limits.
-        </p>
+        <h3>Is there an offline version of the map ?</h3>
+        <p>Those maps are generated by mapnik in millions of png image 256x256 tiles. Storing all of them world wide would be close to impossible, but see the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a>: it is possible for small parts. However, since there are limits for downloads, you will only be able to collect small areas.</p>
 
-        <h3>Why is data updated so rarely?</h3>
-        <p>
-            Starting from December 2025 with the new more powerful server, I hope to be able to update data every 6 months or so. The server should no longer be the limiting factor, only my available time!
-        </p>
+        <h3>Why are datas updated so rarely ?</h3>
+        <p>Starting from December 2025 and a new more powerful server, I hope I'll be able to update datas every 6 months or so. Server shouldn't be the limit, only my available time!</p>
+
+        <h3>Why are there so few functions on the interface ?</h3>
+        <p>The web interface is only meant to be a demonstrator for testing and comparisons; it is not meant for hike planning. Many other tools out there are much better suited for GPX generation, routing, or feature search.</p>
 
         <hr>
 
-        <h2>Reporting problems or discussions about openmaps.fr</h2>
-
+        <h2>Reporting problems or discussions</h2>
         <ul>
-            <li>To report problems about the tile service (outage, slowness, unavailability), please use the <a href="https://github.com/sletuffe/openmaps.fr/issues">GitHub OpenMaps tracker</a>.</li>
-            <li>To join the discussion or ask questions, please visit <a href="https://github.com/sletuffe/openmaps.fr/discussions/">the discussion pages on the same GitHub repo</a>.</li>
-            <li>For private contact, you can email me at <a href="mailto:sly@openmaps.fr">sly@openmaps.fr</a>.</li>
+            <li><strong>Technical issues:</strong> <a href="https://github.com/sletuffe/openmaps.fr/issues">GitHub OpenMaps tracker</a></li>
+            <li><strong>Discussions/Questions:</strong> <a href="https://github.com/sletuffe/openmaps.fr/discussions/">GitHub Discussions</a></li>
+            <li><strong>Private contact:</strong> <a href="mailto:sly@openmaps.fr">sly@openmaps.fr</a></li>
         </ul>
     </div>
 </body>

@@ -2,11 +2,12 @@
 title: Tile Usage Policy for the tile.openmaps.fr service
 ---
 
-[Openmaps.fr (See presentation page)](https://openmaps.fr/about-openmaps.fr.html) 's maps : [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) and [OpenTopoMaps](https://github.com/sletuffe/OpenTopoMap) are free mapnik styles. But delivering tiles has a cost and our **servers are not free**: they are [funded by donations](https://openmaps.fr/donate), and capacity is limited. To protect the service from high usage and help fund server costs, you **must** follow this policy when using tiles from `tile.openmaps.fr`.
+[Openmaps.fr (See presentation page)](https://openmaps.fr/about-openmaps.fr.html) 's maps : [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) and [OpenTopoMaps](https://github.com/sletuffe/OpenTopoMap) are free software mapnik styles. But delivering tiles has a cost and our **servers are not free**: they are [funded by donations](https://openmaps.fr/donate), and capacity is limited. To protect the service from high usage and help fund server costs, you **must** follow this policy when using tiles from `tile.openmaps.fr`.
 
-There is no precise definition of "high usage", but as a rule of thumb, downloading less that 300k tiles per month should be considered acceptable "low volume", higher than that, I might analyse what type of usage it is.
+OpenMaps.fr's maps are meant to be used freely for non commercial projects because our ressources are limited. If the usage of those tiles is for a free projects (free as in "free beer") and the volume not too high, usage should be allowed.
 
-OpenMaps.fr's maps are meant to be used for non commercial projects because our ressources are limited. If the usage of those tiles is for a free project (free as in "free beer") then that is ok.
+There is no precise definition for this "too high volume", but as a rule of thumb, downloading less that 500k tiles per month will be considered acceptable "low volume", for higher volume in free projects, we might need an arangement.
+
 
 You are not required to use a specific API, apikey, or prior subscription. However, heavy or inappropriate use harms others ability to view the map. We may block access, without notice, if your usage degrades the service. We may try to contact you if possible, but cannot guarantee this.
 

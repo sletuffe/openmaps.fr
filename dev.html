@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenMaps.fr : An OpenHikingMap and OpenTopoMap-R TMS map rendering - demo slippy map</title>
+    
+    <link rel="stylesheet" href="./styles/leaflet.css"/>
+    <link rel="stylesheet" href="./styles/Control.Geocoder.css" />
+    <link rel="stylesheet" href="./styles/L.Control.Zoomslider.css" />
+    <link rel="stylesheet" href="./styles/L.Control.MousePosition.css" />
+    
+    <style>
+        /* Base Map Styles */
+        html, body, #map {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the Information Links Container */
+        #info-links-container {
+            position: absolute;
+            top: 10px; 
+            /* CORRECTION: Décalage à 6% */
+            left: 6%; 
+            z-index: 1001; 
+            
+            background-color: rgba(255, 255, 255, 0.7); 
+            padding: 8px 12px;
+            border-radius: 8px; 
+            box-shadow: 0 1px 4px rgba(0,0,0,0.4); 
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        /* Style for the individual links */
+        #info-links-container a {
+            color: #333; 
+            text-decoration: none; 
+            margin: 0 5px;
+            
+            border-right: 1px solid #ccc; 
+            padding-right: 10px;
+        }
+
+        #info-links-container a:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+        
+        #info-links-container a:hover {
+            text-decoration: underline; 
+        }
+
+        /* Style for the Zoom Level Display (Z) */
+        #zoom-level-display {
+            position: absolute;
+            top: 250px; /* Position par défaut pour grand écran */
+            left: 10px;
+            z-index: 1001; 
+            font-weight: bold;
+            padding: 2px 4px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            border: 1px solid #ccc;
+        }
+        
+        /* ======================================================= */
+        /* MEDIA QUERY POUR ÉCRANS ÉTROITS (Responsive) */
+        /* ======================================================= */
+        @media (max-width: 768px) {
+            
+            /* Décalage des zones de contrôles (Zoomslider et Sélecteur de couches) */
+            .leaflet-top.leaflet-left {
+                top: 60px; 
+            }
+            
+            .leaflet-top.leaflet-right {
+                top: 60px;
+            }
+
+            /* CORRECTION : Décalage du niveau de zoom (Z) pour éviter le bandeau multi-ligne */
+            #zoom-level-display {
+                top: 310px; /* Ajusté à 310px pour un bon dégagement */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="info-links-container">
+        <a href="/about-openmaps.fr.html">About openmaps.fr</a>
+        <a href="/donate">❤️ Donation page</a>
+        <a href="/tile-usage-policy.html">Tile usage policy</a>
+    </div>
+
+    <div id="zoom-level-display">Z: 6</div>
+
+    <div id="map"></div>
+
+    <script src="./libs/leaflet.js"></script>
+    <script src="./libs/Control.Geocoder.js"></script>
+    <script src="./libs/L.Control.Zoomslider.js"></script>
+    <script src="./libs/leaflet-hash.js"></script>
+    <script src="./libs/L.Control.MousePosition.js"></script>
+
+    <script>
+        // --- 1. CONFIGURATION OF TILE LAYERS ---
+        
+        const tileLayersConfig = {
+            "OpenHikingMap": {
+                code: 'openhikingmap', 
+                url: 'https://tile.openmaps.fr/openhikingmap/{z}/{x}/{y}.png',
+                attribution: '<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap</a> <a href="https://openmaps.fr/donate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>',
+                tms: false ,
+                maxzoom: 18
+            },
+            "OpenTopoMap-R": {
+                code: 'opentopomap-r', 
+                url: 'https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png',
+                attribution: '<a href="https://github.com/sletuffe/OpenTopoMap">&copy; OpenTopoMap-R</a> <a href="https://openmaps.fr/donate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> <a href="https://openmaps.fr/otm/legend.html">Legend</a>',
+                tms: false,
+                maxzoom: 18
+                
+            },           
+            "Tracetrack Topo": {
+                code: 'top-o-map', 
+                url: 'https://tile.tracestrack.com/topo__/{z}/{x}/{y}.webp?key=b9e56b9414971109391f9f6e3b658197',
+                attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Map render © <a href="https://www.tracestrack.com/">Tracestrack</a>',
+                tms: false,
+                maxzoom: 17
+            },           
+            "ISOMaps Topo": {
+                code: 'top-o-map', 
+                url: 'https://api.iso-maps.com/v1/tiles/{z}/{x}/{y}.webp?api_key=Aay2pQwrbT06chpqDKhRRYEmlRDnCkb33nSj40YYamU2QALoTZzQBIPN5kr5',
+                attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Map render © <a href="https://www.iso-maps.com/">ISOMaps</a>',
+                tms: false,
+                maxzoom: 15
+            },
+            "OpenTopoMap (Top-O-Map)": {
+                code: 'top-o-map', 
+                url: 'https://tile.top-o-map.de/{z}/{x}/{y}.png',
+                attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+                tms: false,
+                maxzoom: 17
+            },
+            "OpenTopoMap (Backup)": {
+                code: 'opentopomap-org', 
+                url: 'https://backup.opentopomap.org/{z}/{x}/{y}.png',
+                attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+                tms: false,
+                maxzoom: 17
+            },
+            "OpenStreetMap (Standard)": {
+                code: 'openstreetmap-standard', 
+                url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                tms: false,
+                maxzoom: 19
+            },
+            "OpenHikingMap-dev": {
+                code: 'openhikingmap-dev', 
+                url: 'https://tile.openmaps.fr/openhikingmap-dev/{z}/{x}/{y}.png',
+                attribution: '<a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">&copy; OpenHikingMap (dév)</a> <a href="https://openmaps.fr/donate">❤️ Donation</a> <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>',
+                tms: false,
+                maxzoom: 18
+            },
+
+        };
+
+        // Utility objects for hash lookup
+        const layerCodes = {};
+        const layerNamesByCode = {};
+
+        for (const name in tileLayersConfig) {
+            const config = tileLayersConfig[name];
+            layerCodes[name] = config.code;
+            layerNamesByCode[config.code] = name;
+        }
+
+
+        // --- 2. MAP INITIALIZATION ---
+        
+        const initialCoordinates = [46.603354, 1.888334]; 
+        const initialZoom = 6; 
+
+        const map = L.map('map', {
+            zoomControl: false 
+        }).setView(initialCoordinates, initialZoom);
+
+        
+        // --- 3. ADDING TILE LAYERS (CORRECTION APPLIQUÉE ICI) ---
+        
+        let baseMaps = {};
+        let defaultLayer;
+
+        // 3.1 Création des objets couches (sans les ajouter à la carte)
+        for (const name in tileLayersConfig) {
+            const config = tileLayersConfig[name];
+            const layer = L.tileLayer(config.url, {
+                attribution: config.attribution,
+                tms: config.tms, 
+                maxZoom: config.maxzoom
+            });
+
+            baseMaps[name] = layer;
+
+            if (!defaultLayer) {
+                defaultLayer = layer;
+            }
+        }
+
+        // Active layer name defaults to the first one defined
+        let activeLayerName = Object.keys(tileLayersConfig)[0]; 
+        let layerToLoad = defaultLayer; // La couche à charger est par défaut la première
+        
+        // --- 4. ADVANCED CONTROLS & HASH LOADING (Correction consolidée ici) ---
+
+        // 4.1. Initialize map state from URL Hash on load
+        if (window.location.hash) {
+            const hashParts = window.location.hash.substring(1).split('/');
+            
+            const hashLayerCode = hashParts[0];
+            const hashLayerName = layerNamesByCode[hashLayerCode]; 
+            
+            if (baseMaps[hashLayerName]) {
+                activeLayerName = hashLayerName;
+                layerToLoad = baseMaps[hashLayerName]; // Utilise la couche du hash
+                
+                const zoom = parseInt(hashParts[1]);
+                const lat = parseFloat(hashParts[2]);
+                const lng = parseFloat(hashParts[3]);
+
+                // Positionne la carte selon le hash (avant l'ajout de la couche pour éviter un flash)
+                map.setView([lat, lng], zoom);
+            }
+        }
+
+        // 4.2. AJOUT FINAL DE LA COUCHE (Unique)
+        layerToLoad.addTo(map);
+
+        // 4.3. Add Layer Control (Selector)
+        const layerControl = L.control.layers(baseMaps, null, {
+            collapsed: false
+        }).addTo(map);
+
+        
+        // 4.4. Permalinks (URL Hash) - Logic uses layer codes
+        
+        // Function to update the hash: #LayerCode/z/lat/lon
+        function updateHash() {
+            const mapCenter = map.getCenter();
+            const zoom = map.getZoom();
+            
+            const layerCode = layerCodes[activeLayerName];
+            
+            const newHash = layerCode + '/' + 
+                            zoom.toFixed(0) + '/' + 
+                            mapCenter.lat.toFixed(5) + '/' + 
+                            mapCenter.lng.toFixed(5);
+                            
+            window.location.hash = newHash;
+        }
+
+        // Event listeners for Permalinks
+        map.on('moveend', updateHash);
+        map.on('baselayerchange', function(e) {
+            activeLayerName = e.name;
+            updateHash();
+        });
+
+
+        // 4.5. Zoom Level Display (Z)
+        const zoomDisplay = document.getElementById('zoom-level-display');
+
+        function updateZoomDisplay() {
+            zoomDisplay.innerHTML = 'Z: ' + map.getZoom();
+        }
+
+        map.on('zoomend', updateZoomDisplay);
+        updateZoomDisplay();
+
+
+        // 4.6. Mouse Position (Coordinates)
+        L.control.mousePosition({
+            position: 'bottomright',
+            separator: ' | ',
+            numDigits: 5 
+        }).addTo(map);
+
+
+        // 4.7. Zoomslider
+        L.control.zoomslider({
+            position: 'topleft' 
+        }).addTo(map);
+        
+        
+        // 4.8. Scale and Geocoding
+        L.control.scale({
+            imperial: false, 
+            position: 'bottomleft'
+        }).addTo(map);
+
+        L.Control.geocoder({
+            geocoder: L.Control.Geocoder.nominatim(),
+            position: 'topright',
+            placeholder: 'Search for a location...', 
+            collapsed: true,
+            errorMessage: 'Nothing found.' 
+        }).addTo(map);
+
+    </script>
+</body>
+</html>
+</body>
+</html>

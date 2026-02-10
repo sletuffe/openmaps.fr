@@ -4,5 +4,6 @@
 
 RewriteEngine On
 RewriteRule ^donate$ donate.html [L]
+RewriteRule ^tup$ tile-usage-policy.html [L]
 
 AddDefaultCharset UTF8

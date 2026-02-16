@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A free map for hikers from OpenHikingMap data.">
+    <title>OpenHikingMap Map Legend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        header h1 {
+            color: #00386b;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .legend-section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .legend-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            display: block;
+            color: #005691;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .legend-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            width: 30%;
+            min-width: 180px;
+            padding: 5px 10px 5px 0;
+        }
+
+        .legend-item img {
+            margin-right: 8px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .line-and-path-img img {
+            height: auto;
+            max-height: 20px;
+            width: auto; 
+        }
+
+        .roads-paths-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .roads-paths-item {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .roads-paths-item img {
+            margin-right: 8px;
+            height: auto;
+            max-height: 20px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>OpenHikingMap Map Legend</h1>
+    </header>
+<div class="legend-section">
+        <span class="legend-title">Hiking & Trails (With SAC Scale difficulty classification)</span>
+        
+        <ul class="legend-list">
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round"/></svg>
+                T1 / T2 / Unknown difficulty
+            </li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="7,5"/></svg>
+                T3 / T4
+            </li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1,6"/></svg>
+                T5 / T6
+            </li>
+        </ul>
+
+        <div style="font-size: 0.85em; color: #666; margin: 10px 0 5px 0; font-style: italic; border-top: 1px dashed #eee; padding-top: 5px;">
+            Trails with bad ground visibility:
+        </div>
+        <ul class="legend-list">
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.5"/></svg>
+                T1 / T2 / Unknown difficulty
+            </li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="7,5" stroke-opacity="0.5"/></svg>
+                T3 / T4
+            </li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1,6" stroke-opacity="0.5"/></svg>
+                T5 / T6
+            </li>
+        </ul>
+
+        <div style="margin-top: 10px;">
+            <ul class="legend-list">
+                <li>
+                    <img src="./legend-images/via_ferrata.png" alt="Via Ferrata">
+                    Via Ferrata
+                </li>
+            </ul>
+        </div>
+    </div>
+<div class="legend-section">
+        <span class="legend-title">Tracks (for vehicles)</span>
+        <div style="font-size: 0.85em; color: #666; margin: 0 0 10px 0; font-style: italic;">
+            Driveable with the following vehicles:
+        </div>
+        <ul class="roads-paths-list">
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 5px;">
+                    <line x1="0" y1="10" x2="40" y2="10" stroke="black" stroke-width="4.6" />
+                    <line x1="0" y1="10" x2="40" y2="10" stroke="white" stroke-width="2.8" />
+                </svg>
+                Paved track (all vehicles)
+            </li>
+
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 15px;">
+                    <line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" />
+                    <line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" />
+                </svg>
+                Normal cars and city bikes
+            </li>
+
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 5px;">
+                    <line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" />
+                    <line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="6,4" stroke-opacity="0.65" />
+                </svg>
+                Cars with high clearance and lower gear ratio
+            </li>
+
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 5px;">
+                    <line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="4,4" stroke-opacity="0.65" />
+                    <line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="4,4" stroke-opacity="0.65" />
+                </svg>
+                Heavy duty off road vehicle (4WD)
+            </li>
+
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 5px;">
+                    <line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.1" stroke-dasharray="5,5" stroke-opacity="0.65" />
+                    <line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.1" stroke-dasharray="5,5" stroke-opacity="0.65" />
+                    <text x="20" y="14" font-family="Arial" font-size="11" fill="#8B4513" font-weight="bold" stroke="white" stroke-width="0.3" paint-order="stroke" text-anchor="middle">?</text>
+                </svg>
+                Unknown
+            </li>
+        </ul>
+    </div>
+        <div class="legend-section">
+        <span class="legend-title">Main Roads</span>
+        <ul class="roads-paths-list">
+            <li class="roads-paths-item"><img src="./legend-images/autobahn.png" alt="Motorway">Motorway, Federal road</li>
+            <li class="roads-paths-item"><img src="./legend-images/landstrasse.png" alt="Rural Road">Rural road</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/normalestrasse.png" alt="Local Street">District road, Local street</li>
+            <li class="roads-paths-item"><img src="./legend-images/strassenimbau.png" alt="Construction">Road under construction</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/service.png" alt="Service Road">Service road</li>
+        </ul>
+    </div>
+
+    <hr/>
+<div class="legend-section">
+        <span class="legend-title">Areas</span>
+        <ul class="legend-list">
+            <li class="legend-item"><img src="./legend-images/laubwald.png" alt="Deciduous Forest">Deciduous forest</li>
+            <li class="legend-item"><img src="./legend-images/nadelwald.png" alt="Coniferous Forest">Coniferous forest</li>
+            <li class="legend-item"><img src="./legend-images/mischwald.png" alt="Mixed Forest">Mixed forest</li>
+
+            <li class="legend-item"><img src="./legend-images/sumpf.png" alt="Swamp">Swamp</li>
+            <li class="legend-item"><img src="./legend-images/moor.png" alt="Bog">Bog, Moor</li>
+            <li class="legend-item"><img src="./legend-images/roehricht.png" alt="Reed Bed">Reed bed</li>
+
+            <li class="legend-item"><img src="./legend-images/watt.png" alt="Tidal Flats">Tidal flats</li>
+            <li class="legend-item"><img src="./legend-images/sand.png" alt="Sand">Beach, Sand</li>
+            <li class="legend-item"><img src="./legend-images/geroell.png" alt="Scree">Scree</li>
+
+            <li class="legend-item"><img src="./legend-images/gehoelz.png" alt="Woodland">Woodland</li>
+            <li class="legend-item"><img src="./legend-images/wiese.png" alt="Meadow">Meadow</li>
+            <li class="legend-item"></li>
+            
+            <li class="legend-item"><img src="./legend-images/wein.png" alt="Vineyard">Vineyard</li>
+            <li class="legend-item"><img src="./legend-images/friedhof.png" alt="Cemetery">Cemetery</li>
+            <li class="legend-item"><img src="./legend-images/schrebergarten.png" alt="Allotment Gardens">Allotment gardens</li>
+
+            <li class="legend-item"><img src="./legend-images/sperrgebiet.png" alt="Restricted Area">Restricted area</li>
+            <li class="legend-item"><img src="./legend-images/bergbau.png" alt="Mining">Mining, Quarry</li>
+        </ul>
+    </div>
+    
+    <hr/>
+
+    <div class="legend-section">
+        <span class="legend-title">Lines</span>
+        <ul class="legend-list">
+            <li class="legend-item line-and-path-img"><img src="./legend-images/stromleitung.png" alt="Power Line">Power line</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/seilbahn.png" alt="Cable Car">Cable car / Lift</li>
+            <li class="legend-item line-and-path-img"></li> 
+
+            <li class="legend-item line-and-path-img"><img src="./legend-images/boeschung.png" alt="Embankment">Embankment</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/deich.png" alt="Dyke">Dyke</li>
+            <li class="legend-item line-and-path-img"></li> 
+
+            <li class="legend-item line-and-path-img"><img src="./legend-images/zaun.png" alt="Fence">Fence</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/hecke.png" alt="Hedge">Hedge</li>
+        </ul>
+    </div>
+
+    <hr/>
+    <div class="legend-section">
+        <span class="legend-title">Symbols</span>
+        <ul class="legend-list">
+            <li class="legend-item"><img src="./legend-images/kirche.png" alt="Church">Church</li>
+            <li class="legend-item"><img src="./legend-images/kapelle.png" alt="Chapel">Chapelle</li>
+            <li class="legend-item"><img src="./legend-images/burg.png" alt="Castle">Castle, Fortress</li>
+
+            <li class="legend-item"><img src="./legend-images/burgruine.png" alt="Castle Ruin">Castle ruin, Ruin</li>
+            <li class="legend-item"><img src="./legend-images/schloss.png" alt="Palace">Palace, Manor</li>
+            <li class="legend-item"><img src="./legend-images/schlossruine.png" alt="Palace Ruin">Palace ruin</li>
+
+            <li class="legend-item"><img src="./legend-images/sportplatz.png" alt="Sports Ground">Sports ground</li>
+            <li class="legend-item"><img src="./legend-images/stadion.png" alt="Stadium">Stadium</li>
+            <li class="legend-item"><img src="./legend-images/turm.png" alt="Tower">Tower</li>
+
+            <li class="legend-item"><img src="./legend-images/aussichtsturm.png" alt="Observation Tower">Observation tower</li>
+            <li class="legend-item"><img src="./legend-images/wasserturm.png" alt="Water Tower">Water tower</li>
+            <li class="legend-item"><img src="./legend-images/sendeturm.png" alt="Transmission Tower">Transmission tower</li>
+
+            <li class="legend-item"><img src="./legend-images/mobilfunkmast.png" alt="Mobile Phone Mast">Mobile phone mast</li>
+            <li class="legend-item"><img src="./legend-images/leuchtturm.png" alt="Lighthouse">Lighthouse</li>
+            <li class="legend-item"><img src="./legend-images/aussichtspunkt.png" alt="Viewpoint">Viewpoint</li>
+
+            <li class="legend-item"><img src="./legend-images/badestelle.png" alt="Bathing Area">Swimming pool, Bathing area</li>
+            <li class="legend-item"><img src="./legend-images/camping.png" alt="Campsite">Campsite</li>
+            <li class="legend-item"><img src="./legend-images/bergwerk.png" alt="Mine">Mine</li>
+
+            <li class="legend-item"><img src="./legend-images/bergwerk_stillgelegt.png" alt="Disused Mine">Mine (disused)</li>
+            <li class="legend-item"><img src="./legend-images/muehle.png" alt="Mill">Mill</li>
+            <li class="legend-item"><img src="./legend-images/unterstand.png" alt="Shelter">Shelter</li>
+
+            <li class="legend-item"><img src="./legend-images/denkmal.png" alt="Monument">Monument, Memorial</li>
+            <li class="legend-item"><img src="./legend-images/wegkreuz.png" alt="Wayside Cross">Wayside cross</li>
+            <li class="legend-item"><img src="./legend-images/huegelgrab.png" alt="Tumulus">Tumulus</li>
+
+            <li class="legend-item"><img src="./legend-images/gipfel.png" alt="Summit">Summit</li>
+            <li class="legend-item"><img src="./legend-images/gipfelkreuz.png" alt="Summit Cross">Summit cross</li>
+            <li class="legend-item"><img src="./legend-images/quelle.png" alt="Spring">Spring</li>
+
+            <li class="legend-item"><img src="./legend-images/hoehle.png" alt="Cave Entrance">Cave entrance</li>
+            <li class="legend-item"><img src="./legend-images/kreuz.png" alt="Cross">Cross</li>
+            <li class="legend-item"><img src="./legend-images/sattel.png" alt="Saddle">Saddle / Pass</li>
+
+            <li class="legend-item"><img src="./legend-images/laubbaum.png" alt="Prominent Tree">Prominent tree</li>
+            <li class="legend-item"><img src="./legend-images/doline.png" alt="Sinkhole">Sinkhole</li>
+            <li class="legend-item"><img src="./legend-images/kraftwerk.png" alt="Power Plant">Power plant</li>
+
+            <li class="legend-item"><img src="./legend-images/photovoltaikanlage.png" alt="Photovoltaic System">Photovoltaic system</li>
+            <li class="legend-item"><img src="./legend-images/windkraftanlage.png" alt="Wind Turbine">Wind turbine</li>
+            <li class="legend-item"><img src="./legend-images/schornstein.png" alt="Chimney">Chimney</li>
+        </ul>
+    </div>
+</body>
+</html>

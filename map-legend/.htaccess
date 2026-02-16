@@ -1,0 +1,11 @@
+Options +MultiViews
+AddLanguage fr .fr
+AddLanguage en .en
+AddLanguage es .es
+AddLanguage it .it
+AddLanguage de .de
+
+
+# Définit la priorité si le navigateur ne précise rien
+LanguagePriority en fr es
+ForceLanguagePriority Fallback

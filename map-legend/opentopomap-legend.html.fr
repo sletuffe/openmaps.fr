@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Légende de carte topographique libre basée sur les données OpenStreetMap.">
+    <meta name="keywords" content="open, topo, map, maps, openstreetmap, osm, srtm, topographie, courbes de niveau, altimétrie, libre">
+    <title>Légende de la carte OpenTopoMap</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        header h1 {
+            color: #00386b;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .legend-section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .legend-title {
+            font-size: 1.2em;
+            font-variant: small-caps;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            display: block;
+            color: #005691;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        /* legend elements */
+        .legend-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+        }
+
+        /* icon / text  */
+        .legend-item {
+            display: flex;
+            align-items: center;
+            width: 30%; /* Pour afficher 3 colonnes, ajusté pour la flexibilité */
+            min-width: 180px; /* Largeur minimale pour l'affichage sur mobile */
+            padding: 5px 10px 5px 0;
+        }
+
+        .legend-item img {
+            margin-right: 8px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        /* Style for lines road and paths*/
+        .line-and-path-img img {
+            height: auto;
+            max-height: 20px; /* too big images */
+            width: auto; 
+        }
+
+        /* for roads and paths */
+        .roads-paths-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 columns */
+            gap: 10px 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .roads-paths-item {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .roads-paths-item img {
+            margin-right: 8px;
+            height: auto;
+            max-height: 20px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Légende de la carte OpenTopoMap</h1>
+    </header>
+
+    <div class="legend-section">
+        <span class="legend-title">Surfaces et Zones</span>
+        <ul class="legend-list">
+            <li class="legend-item"><img src="./legend-images/laubwald.png" alt="Forêt de feuillus">Forêt de feuillus</li>
+            <li class="legend-item"><img src="./legend-images/nadelwald.png" alt="Forêt de conifères">Forêt de conifères</li>
+            <li class="legend-item"><img src="./legend-images/mischwald.png" alt="Forêt mixte">Forêt mixte</li>
+
+            <li class="legend-item"><img src="./legend-images/sumpf.png" alt="Marais">Marais</li>
+            <li class="legend-item"><img src="./legend-images/moor.png" alt="Tourbière">Tourbière</li>
+            <li class="legend-item"><img src="./legend-images/roehricht.png" alt="Roselière">Roselière</li>
+
+            <li class="legend-item"><img src="./legend-images/watt.png" alt="Estran">Estran (Zone de marnage)</li>
+            <li class="legend-item"><img src="./legend-images/sand.png" alt="Sable">Plage, Sable</li>
+            <li class="legend-item"><img src="./legend-images/geroell.png" alt="Éboulis">Éboulis / Pierrier</li>
+
+            <li class="legend-item"><img src="./legend-images/gehoelz.png" alt="Bosquet">Bosquet / Zone boisée</li>
+            <li class="legend-item"><img src="./legend-images/wiese.png" alt="Prairie">Prairie</li>
+            <li class="legend-item"></li>
+            
+            <li class="legend-item"><img src="./legend-images/wein.png" alt="Vignoble">Vignoble</li>
+            <li class="legend-item"><img src="./legend-images/friedhof.png" alt="Cimetière">Cimetière</li>
+            <li class="legend-item"><img src="./legend-images/schrebergarten.png" alt="Jardins familiaux">Jardins familiaux</li>
+
+            <li class="legend-item"><img src="./legend-images/sperrgebiet.png" alt="Zone restreinte">Zone d'accès restreint</li>
+            <li class="legend-item"><img src="./legend-images/bergbau.png" alt="Mine">Mine, Carrière</li>
+        </ul>
+    </div>
+    
+    <hr/>
+
+    <div class="legend-section">
+        <span class="legend-title">Lignes</span>
+        <ul class="legend-list">
+            
+            <li class="legend-item line-and-path-img"><img src="./legend-images/stromleitung.png" alt="Ligne électrique">Ligne électrique</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/seilbahn.png" alt="Remontée mécanique">Téléphérique / Remontée</li>
+            <li class="legend-item line-and-path-img"></li> 
+
+            <li class="legend-item line-and-path-img"><img src="./legend-images/boeschung.png" alt="Talus">Talus</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/deich.png" alt="Digue">Digue</li>
+            <li class="legend-item line-and-path-img"></li> 
+
+            <li class="legend-item line-and-path-img"><img src="./legend-images/zaun.png" alt="Clôture">Clôture</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/hecke.png" alt="Haie">Haie</li>
+        </ul>
+    </div>
+
+    <hr/>
+
+    <div class="legend-section">
+        <span class="legend-title">Routes et Chemins</span>
+        <ul class="roads-paths-list">
+            <li class="roads-paths-item"><img src="./legend-images/autobahn.png" alt="Autoroute">Autoroute, Route nationale</li>
+            <li class="roads-paths-item"><img src="./legend-images/landstrasse.png" alt="Route rurale">Route départementale / rurale</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/normalestrasse.png" alt="Rue locale">Route locale, Rue</li>
+            <li class="roads-paths-item"><img src="./legend-images/strassenimbau.png" alt="En construction">Route en construction</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/service.png" alt="Voie de service">Voie de desserte / service</li>
+            <li class="roads-paths-item"><img src="./legend-images/track_grade1.png" alt="Piste goudronnée">Chemin goudronné / pavé</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/track_grade2.png" alt="Piste gravillonnée">Chemin gravillonné, Piste cyclable</li>
+            <li class="roads-paths-item"><img src="./legend-images/track_grade34.png" alt="Surface meuble">Chemin d'exploitation (surface meuble)</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/track_grade5.png" alt="Chemin de terre">Chemin de terre / non revêtu</li>
+            <li class="roads-paths-item"><img src="./legend-images/bobsleigh.png" alt="Piste de bobsleigh">Piste de bobsleigh</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/toboggan.png" alt="Luge d'été">Piste de luge d'été</li>
+            <li class="roads-paths-item"><img src="./legend-images/fussweg_t12.png" alt="Sentier">Sentier piéton</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/fussweg_t34.png" alt="Sentier difficile">Sentier difficile (échelle SAC T3 T4)</li>
+            <li class="roads-paths-item"><img src="./legend-images/fussweg_t56.png" alt="Via ferrata">Sentier très difficile (SAC T5 T6), Via ferrata</li>
+        </ul>
+    </div>
+
+    <hr/>
+
+    <div class="legend-section">
+        <span class="legend-title">Symboles</span>
+        <ul class="legend-list">
+            <li class="legend-item"><img src="./legend-images/kirche.png" alt="Église">Église</li>
+            <li class="legend-item"><img src="./legend-images/kapelle.png" alt="Chapelle">Chapelle</li>
+            <li class="legend-item"><img src="./legend-images/burg.png" alt="Château">Château, Forteresse</li>
+
+            <li class="legend-item"><img src="./legend-images/burgruine.png" alt="Ruine">Ruine de château, Ruine</li>
+            <li class="legend-item"><img src="./legend-images/schloss.png" alt="Palais">Palais, Manoir</li>
+            <li class="legend-item"><img src="./legend-images/schlossruine.png" alt="Ruine de palais">Ruine de palais</li>
+
+            <li class="legend-item"><img src="./legend-images/sportplatz.png" alt="Terrain de sport">Terrain de sport</li>
+            <li class="legend-item"><img src="./legend-images/stadion.png" alt="Stade">Stade</li>
+            <li class="legend-item"><img src="./legend-images/turm.png" alt="Tour">Tour</li>
+
+            <li class="legend-item"><img src="./legend-images/aussichtsturm.png" alt="Belvédère">Tour d'observation / Belvédère</li>
+            <li class="legend-item"><img src="./legend-images/wasserturm.png" alt="Château d'eau">Château d'eau</li>
+            <li class="legend-item"><img src="./legend-images/sendeturm.png" alt="Émetteur">Tour télécom, Émetteur</li>
+
+            <li class="legend-item"><img src="./legend-images/mobilfunkmast.png" alt="Antenne mobile">Antenne relais mobile</li>
+            <li class="legend-item"><img src="./legend-images/leuchtturm.png" alt="Phare">Phare</li>
+            <li class="legend-item"><img src="./legend-images/aussichtspunkt.png" alt="Point de vue">Point de vue</li>
+
+            <li class="legend-item"><img src="./legend-images/badestelle.png" alt="Baignade">Piscine, Zone de baignade</li>
+            <li class="legend-item"><img src="./legend-images/camping.png" alt="Camping">Terrain de camping</li>
+            <li class="legend-item"><img src="./legend-images/bergwerk.png" alt="Mine">Mine</li>
+
+            <li class="legend-item"><img src="./legend-images/bergwerk_stillgelegt.png" alt="Mine désaffectée">Mine (désaffectée)</li>
+            <li class="legend-item"><img src="./legend-images/muehle.png" alt="Moulin">Moulin</li>
+            <li class="legend-item"><img src="./legend-images/unterstand.png" alt="Abri">Abri</li>
+
+            <li class="legend-item"><img src="./legend-images/huette.png" alt="Cabane">Cabane / Refuge</li>
+            <li class="legend-item"><img src="./legend-images/huette_bewirtschaftet.png" alt="Refuge gardé">Refuge (gardé)</li>
+            <li class="legend-item"><img src="./legend-images/denkmal.png" alt="Monument">Monument, Mémorial</li>
+
+            <li class="legend-item"><img src="./legend-images/wegkreuz.png" alt="Croix de chemin">Croix de chemin</li>
+            <li class="legend-item"><img src="./legend-images/huegelgrab.png" alt="Tumulus">Tumulus / Tertre</li>
+            <li class="legend-item"><img src="./legend-images/gipfel.png" alt="Sommet">Sommet</li>
+
+            <li class="legend-item"><img src="./legend-images/gipfelkreuz.png" alt="Croix de sommet">Croix de sommet</li>
+            <li class="legend-item"><img src="./legend-images/quelle.png" alt="Source">Source</li>
+            <li class="legend-item"><img src="./legend-images/hoehle.png" alt="Entrée de grotte">Entrée de grotte</li>
+
+            <li class="legend-item"><img src="./legend-images/kreuz.png" alt="Croix">Croix</li>
+            <li class="legend-item"><img src="./legend-images/sattel.png" alt="Col">Col / Selle</li>
+            <li class="legend-item"><img src="./legend-images/laubbaum.png" alt="Arbre remarquable">Arbre remarquable</li>
+            <li class="legend-item"><img src="./legend-images/doline.png" alt="Doline">Doline</li>
+            <li class="legend-item"><img src="./legend-images/kraftwerk.png" alt="Centrale électrique">Centrale électrique</li>
+            <li class="legend-item"><img src="./legend-images/photovoltaikanlage.png" alt="Photovoltaïque">Installation photovoltaïque</li>
+
+            <li class="legend-item"><img src="./legend-images/windkraftanlage.png" alt="Éolienne">Éolienne</li>
+            <li class="legend-item"><img src="./legend-images/schornstein.png" alt="Cheminée">Cheminée</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -23,17 +23,9 @@ Current mod_tile config :
   ModTileThrottlingRenders 1000 0.2
 ```
 
-## Hardware used from 2025-12-15 until ??
+## Hardware used after 2025-12-15
 \o/ I took advantage of OVHcloud's Blackfriday offers and got me a SYS-LE-5. It is a 8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM for 889 € / year
 This should be ideal for handling intensive rendering and high usage.
-
-## Old hardware used (From 2022 to 2025-12-15)
-
-This server was kindly privided by [Gplservice](https://www.gplservice.fr), the company I work for, but during 2026 it might be decomissionned and shut down: 
-* Xeon 4 cores/8 threads @2.8 Ghz 
-* 96 GB DDR3 ECC
-* Hardware raid 5 of 4 12TB spinning disks (no ssd)
-* ~4TB used (600GB for OSM data in Postgres + 300GB contours in Postgres + 200GB of various shape and tif files + ~1500GB of Tiles of OpenHikingMap and ~1500GB for OpenTopoMap)
 
 ## Funding
 
@@ -43,7 +35,7 @@ To help financing for server costs and maintaining the service functionnal, plea
 
 * RealTime uptime calculator : https://status.openmaps.fr/ (gratefully provided by [EDMC73 french FreeLance](https://www.edmc73.com/) )
 * 2025-12-16 : <span style="background-color:lime;font-weight:bold; padding: 1pt">server running OK</span>
-* Datas are from ~2025-11-01 (this information is manually updated if I don't forget !)
+* OSM datas up to 2026-02-03 (this information is manually updated if I don't forget!)
 <!--
 Examples to copy :
 * 2013-03-30 : <span style="background-color:lime;font-weight:bold; padding: 1pt">db not too old and server running OK</span>

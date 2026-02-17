@@ -109,7 +109,7 @@
         </p>
 
         <div class="note">
-            Since ~2011, due to increasing mass download applications targeting and hampering the OpenHikingMap server, I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 1000 not already rendered tiles or 2000 tiles (Total) will get your connection throttled to 0.2 Tile per second or 0.5 per second respectively.
+            Since ~2011, due to increasing mass download applications targeting and hampering the OpenHikingMap server, I had to take measures in order to give priority to "browsing users". The current limit is that asking more than 1000 not already rendered tiles or 2000 tiles (Total) will get your connection throttled to 0.2 Tile per second or 0.5 per second respectively.
         </div>
 
         <p>Current <code>mod_tile</code> config:</p>
@@ -120,20 +120,11 @@ ModTileThrottlingRenders 1000 0.2
 
         <hr>
 
-        <h2>Hardware used from 2025-12-15 until ??</h2>
+        <h2>Hardware used after 2025-12-15</h2>
         <p>
             \o/ I took advantage of OVHcloud's Blackfriday offers and got me a SYS-LE-5. It is a <strong>8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM</strong> for 889 € / year. 
             This should be ideal for handling intensive rendering and high usage.
         </p>
-
-        <h2>Old hardware used (From 2022 to 2025-12-15)</h2>
-        <p>This server was kindly provided by <a href="https://www.gplservice.fr">Gplservice</a>, the company I work for, but during 2026 it might be decommissioned and shut down:</p>
-        <ul>
-            <li>Xeon 4 cores/8 threads @2.8 Ghz</li>
-            <li>96 GB DDR3 ECC</li>
-            <li>Hardware raid 5 of 4 12TB spinning disks (no ssd)</li>
-            <li>~4TB used (600GB for OSM data, 300GB contours, 200GB various shapes/tif, ~3000GB for tiles)</li>
-        </ul>
 
         <hr>
 
@@ -146,7 +137,7 @@ ModTileThrottlingRenders 1000 0.2
         <ul>
             <li>RealTime uptime calculator: <a href="https://status.openmaps.fr/">https://status.openmaps.fr/</a> (gratefully provided by <a href="https://www.edmc73.com/">EDMC73 french FreeLance</a>)</li>
             <li>2025-12-16: <span class="status-badge" style="background-color:lime;">server running OK</span></li>
-            <li>Datas are from 2026-02-03 (this information is manually updated if I don't forget!)</li>
+            <li>OSM datas up to 2026-02-03 (this information is manually updated if I don't forget!)</li>
         </ul>
 
         <hr>

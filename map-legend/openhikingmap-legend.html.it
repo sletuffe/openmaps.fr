@@ -1,134 +1,319 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Légende de la carte OpenHikingMap.">
-    <title>Légende OpenHikingMap</title>
+    <meta name="description" content="Una mappa gratuita per escursionisti dai dati OpenHikingMap.">
+    <title>Legenda mappa OpenHikingMap</title>
     <style>
-        body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; margin: 20px; background-color: #f9f9f9; }
-        header h1 { color: #00386b; text-align: center; margin-bottom: 30px; }
-        .legend-section { margin-bottom: 20px; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .legend-title { font-size: 1.2em; font-weight: bold; margin-top: 15px; margin-bottom: 15px; display: block; color: #005691; border-bottom: 2px solid #eee; padding-bottom: 5px; }
-        .legend-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; font-size: 0.9em; }
-        .legend-item { display: flex; align-items: center; width: 30%; min-width: 180px; padding: 5px 10px 5px 0; }
-        .legend-item img { margin-right: 8px; height: 20px; object-fit: contain; flex-shrink: 0; }
-        .roads-paths-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; list-style: none; padding: 0; margin: 0; font-size: 0.9em; }
-        .roads-paths-item { display: flex; align-items: center; padding: 5px 0; }
-        hr { border: none; border-top: 1px solid #eee; margin: 30px 0; }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        header h1 {
+            color: #00386b;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .legend-section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .legend-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            display: block;
+            color: #005691;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .legend-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            width: 30%;
+            min-width: 180px;
+            padding: 5px 10px 5px 0;
+        }
+
+        .legend-item img {
+            margin-right: 8px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .line-and-path-img img {
+            height: auto;
+            max-height: 20px;
+            width: auto; 
+        }
+
+        .roads-paths-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .roads-paths-item {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .roads-paths-item img {
+            margin-right: 8px;
+            height: auto;
+            max-height: 20px;
+            width: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
     </style>
 </head>
 <body>
-    <header><h1>Légende OpenHikingMap</h1></header>
+
+    <header>
+        <h1>Legenda della mappa OpenHikingMap</h1>
+    </header>
+
     <div class="legend-section">
-        <span class="legend-title">Randonnée & Sentiers (Classification SAC)</span>
+        <span class="legend-title">Escursionismo & Sentieri (Classificazione difficoltà scala SAC)</span>
+        
         <ul class="legend-list">
-            <li class="legend-item"><svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round"/></svg>T1 / T2 / Difficulté inconnue</li>
-            <li class="legend-item"><svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="7,5"/></svg>T3 / T4</li>
-            <li class="legend-item"><svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1,6"/></svg>T5 / T6</li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round"/></svg>
+                T1 / T2 / Difficoltà ignota
+            </li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="7,5"/></svg>
+                T3 / T4
+            </li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1,6"/></svg>
+                T5 / T6
+            </li>
         </ul>
-        <div style="font-size: 0.85em; color: #666; margin: 10px 0 5px 0; font-style: italic; border-top: 1px dashed #eee; padding-top: 5px;">Sentiers avec faible visibilité au sol :</div>
+
+        <div style="font-size: 0.85em; color: #666; margin: 10px 0 5px 0; font-style: italic; border-top: 1px dashed #eee; padding-top: 5px;">
+            Sentieri con scarsa visibilità del terreno:
+        </div>
         <ul class="legend-list">
-            <li class="legend-item"><svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.5"/></svg>T1 / T2 / Inconnue</li>
-            <li class="legend-item"><svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="7,5" stroke-opacity="0.5"/></svg>T3 / T4</li>
-            <li class="legend-item"><svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1,6" stroke-opacity="0.5"/></svg>T5 / T6</li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.5"/></svg>
+                T1 / T2 / Difficoltà ignota
+            </li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="7,5" stroke-opacity="0.5"/></svg>
+                T3 / T4
+            </li>
+            <li class="legend-item">
+                <svg width="40" height="20"><line x1="5" y1="10" x2="35" y2="10" stroke="#f12b2b" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1,6" stroke-opacity="0.5"/></svg>
+                T5 / T6
+            </li>
         </ul>
-        <div style="margin-top: 10px;"><ul class="legend-list"><li class="legend-item"><img src="./legend-images/via_ferrata.png" alt="Via Ferrata">Via Ferrata</li></ul></div>
+
+        <div style="margin-top: 10px;">
+            <ul class="legend-list">
+                <li>
+                    <img src="./legend-images/via_ferrata.png" alt="Via Ferrata">
+                    Via Ferrata
+                </li>
+            </ul>
+        </div>
     </div>
+
     <div class="legend-section">
-        <span class="legend-title">Pistes (pour véhicules)</span>
-        <div style="font-size: 0.85em; color: #666; margin: 0 0 10px 0; font-style: italic;">Praticable avec les véhicules suivants :</div>
+        <span class="legend-title">Strade sterrate e carrarecce (per veicoli)</span>
+        <div style="font-size: 0.85em; color: #666; margin: 0 0 10px 0; font-style: italic;">
+            Percorribile con i seguenti veicoli:
+        </div>
         <ul class="roads-paths-list">
-            <li class="roads-paths-item"><svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 15px;"><line x1="0" y1="10" x2="40" y2="10" stroke="black" stroke-width="4.6" /><line x1="0" y1="10" x2="40" y2="10" stroke="white" stroke-width="2.8" /></svg>Piste goudronnée (tous véhicules)</li>
-            <li class="roads-paths-item"><svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 15px;"><line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" /><line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" /></svg>Voitures de tourisme et vélos de ville</li>
-            <li class="roads-paths-item"><svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 15px;"><line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" /><line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="6,4" stroke-opacity="0.65" /></svg>Véhicules à garde au sol haute</li>
-            <li class="roads-paths-item"><svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 15px;"><line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="4,4" stroke-opacity="0.65" /><line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="4,4" stroke-opacity="0.65" /></svg>Véhicules tout-terrain (4WD)</li>
-            <li class="roads-paths-item"><svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 15px;"><line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.1" stroke-dasharray="5,5" stroke-opacity="0.65" /><line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.1" stroke-dasharray="5,5" stroke-opacity="0.65" /><text x="20" y="14" font-family="Arial" font-size="11" fill="#8B4513" font-weight="bold" stroke="white" stroke-width="0.3" paint-order="stroke" text-anchor="middle">?</text></svg>Inconnu</li>
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 5px;">
+                    <line x1="0" y1="10" x2="40" y2="10" stroke="black" stroke-width="4.6" />
+                    <line x1="0" y1="10" x2="40" y2="10" stroke="white" stroke-width="2.8" />
+                </svg>
+                Strada asfaltata (tutti i veicoli)
+            </li>
+
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 15px;">
+                    <line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" />
+                    <line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" />
+                </svg>
+                Auto normali e bici da città
+            </li>
+
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 5px;">
+                    <line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-opacity="0.65" />
+                    <line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="6,4" stroke-opacity="0.65" />
+                </svg>
+                Auto con assetto rialzato (SUV) e marce corte
+            </li>
+
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 5px;">
+                    <line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="4,4" stroke-opacity="0.65" />
+                    <line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.2" stroke-dasharray="4,4" stroke-opacity="0.65" />
+                </svg>
+                Fuoristrada pesante (4x4)
+            </li>
+
+            <li class="roads-paths-item">
+                <svg width="40" height="20" viewBox="0 0 40 20" style="margin-right: 5px;">
+                    <line x1="0" y1="8.2" x2="40" y2="8.2" stroke="#8B4513" stroke-width="1.1" stroke-dasharray="5,5" stroke-opacity="0.65" />
+                    <line x1="0" y1="11.8" x2="40" y2="11.8" stroke="#8B4513" stroke-width="1.1" stroke-dasharray="5,5" stroke-opacity="0.65" />
+                    <text x="20" y="14" font-family="Arial" font-size="11" fill="#8B4513" font-weight="bold" stroke="white" stroke-width="0.3" paint-order="stroke" text-anchor="middle">?</text>
+                </svg>
+                Ignoto
+            </li>
         </ul>
     </div>
+
     <div class="legend-section">
-        <span class="legend-title">Routes Principales</span>
+        <span class="legend-title">Strade principali</span>
         <ul class="roads-paths-list">
-            <li class="roads-paths-item"><img src="./legend-images/autobahn.png" alt="Autoroute">Autoroute, Route nationale</li>
-            <li class="roads-paths-item"><img src="./legend-images/landstrasse.png" alt="Route rurale">Route départementale / rurale</li>
-            <li class="roads-paths-item"><img src="./legend-images/normalestrasse.png" alt="Rue locale">Route de district, Rue locale</li>
-            <li class="roads-paths-item"><img src="./legend-images/strassenimbau.png" alt="Construction">Route en construction</li>
-            <li class="roads-paths-item"><img src="./legend-images/service.png" alt="Service">Voie de service</li>
+            <li class="roads-paths-item"><img src="./legend-images/autobahn.png" alt="Autostrada">Autostrada, Strada Statale</li>
+            <li class="roads-paths-item"><img src="./legend-images/landstrasse.png" alt="Strada extraurbana">Strada extraurbana / provinciale</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/normalestrasse.png" alt="Strada locale">Strada comunale, Via locale</li>
+            <li class="roads-paths-item"><img src="./legend-images/strassenimbau.png" alt="In costruzione">Strada in costruzione</li>
+
+            <li class="roads-paths-item"><img src="./legend-images/service.png" alt="Strada di servizio">Strada di servizio</li>
         </ul>
     </div>
-    <hr/><div class="legend-section">
-        <span class="legend-title">Occupation du sol</span>
+
+    <hr/>
+
+    <div class="legend-section">
+        <span class="legend-title">Aree</span>
         <ul class="legend-list">
-            <li class="legend-item"><img src="./legend-images/laubwald.png" alt="">Forêt de feuillus</li>
-            <li class="legend-item"><img src="./legend-images/nadelwald.png" alt="">Forêt de conifères</li>
-            <li class="legend-item"><img src="./legend-images/mischwald.png" alt="">Forêt mixte</li>
-            <li class="legend-item"><img src="./legend-images/sumpf.png" alt="">Marais</li>
-            <li class="legend-item"><img src="./legend-images/moor.png" alt="">Tourbière</li>
-            <li class="legend-item"><img src="./legend-images/roehricht.png" alt="">Roselière</li>
-            <li class="legend-item"><img src="./legend-images/watt.png" alt="">Estran (vasière)</li>
-            <li class="legend-item"><img src="./legend-images/sand.png" alt="">Plage, Sable</li>
-            <li class="legend-item"><img src="./legend-images/geroell.png" alt="">Éboulis</li>
-            <li class="legend-item"><img src="./legend-images/gehoelz.png" alt="">Boqueteau</li>
-            <li class="legend-item"><img src="./legend-images/wiese.png" alt="">Prairie</li>
+            <li class="legend-item"><img src="./legend-images/laubwald.png" alt="Bosco di latifoglie">Bosco di latifoglie</li>
+            <li class="legend-item"><img src="./legend-images/nadelwald.png" alt="Bosco di conifere">Bosco di conifere</li>
+            <li class="legend-item"><img src="./legend-images/mischwald.png" alt="Bosco misto">Bosco misto</li>
+
+            <li class="legend-item"><img src="./legend-images/sumpf.png" alt="Palude">Palude</li>
+            <li class="legend-item"><img src="./legend-images/moor.png" alt="Torbiere">Torbiere / Acquitrini</li>
+            <li class="legend-item"><img src="./legend-images/roehricht.png" alt="Canneti">Canneti</li>
+
+            <li class="legend-item"><img src="./legend-images/watt.png" alt="Zona di marea">Piana di marea</li>
+            <li class="legend-item"><img src="./legend-images/sand.png" alt="Sabbia">Spiaggia, Sabbia</li>
+            <li class="legend-item"><img src="./legend-images/geroell.png" alt="Ghiaione">Ghiaione / Pietraia</li>
+
+            <li class="legend-item"><img src="./legend-images/gehoelz.png" alt="Boschetto">Zona boschiva / Boscaglia</li>
+            <li class="legend-item"><img src="./legend-images/wiese.png" alt="Prato">Prato / Pascolo</li>
             <li class="legend-item"></li>
-            <li class="legend-item"><img src="./legend-images/wein.png" alt="">Vignoble</li>
-            <li class="legend-item"><img src="./legend-images/friedhof.png" alt="">Cimetière</li>
-            <li class="legend-item"><img src="./legend-images/schrebergarten.png" alt="">Jardins familiaux</li>
-            <li class="legend-item"><img src="./legend-images/sperrgebiet.png" alt="">Zone restreinte</li>
-            <li class="legend-item"><img src="./legend-images/bergbau.png" alt="">Mine, Carrière</li>
+            
+            <li class="legend-item"><img src="./legend-images/wein.png" alt="Vigneto">Vigneto</li>
+            <li class="legend-item"><img src="./legend-images/friedhof.png" alt="Cimitero">Cimitero</li>
+            <li class="legend-item"><img src="./legend-images/schrebergarten.png" alt="Orti urbani">Orti urbani</li>
+
+            <li class="legend-item"><img src="./legend-images/sperrgebiet.png" alt="Zona riservata">Zona riservata / Proibita</li>
+            <li class="legend-item"><img src="./legend-images/bergbau.png" alt="Attività estrattiva">Miniera, Cava</li>
         </ul>
     </div>
-    <hr/><div class="legend-section">
-        <span class="legend-title">Lignes</span>
+    
+    <hr/>
+
+    <div class="legend-section">
+        <span class="legend-title">Linee</span>
         <ul class="legend-list">
-            <li class="legend-item"><img src="./legend-images/stromleitung.png" alt="">Ligne électrique</li>
-            <li class="legend-item"><img src="./legend-images/seilbahn.png" alt="">Téléphérique / Lift</li>
-            <li class="legend-item"></li>
-            <li class="legend-item"><img src="./legend-images/boeschung.png" alt="">Talus</li>
-            <li class="legend-item"><img src="./legend-images/deich.png" alt="">Digue</li>
-            <li class="legend-item"></li>
-            <li class="legend-item"><img src="./legend-images/zaun.png" alt="">Clôture</li>
-            <li class="legend-item"><img src="./legend-images/hecke.png" alt="">Haie</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/stromleitung.png" alt="Elettrodotto">Elettrodotto</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/seilbahn.png" alt="Funivia">Funivia / Impianto</li>
+            <li class="legend-item line-and-path-img"></li> 
+
+            <li class="legend-item line-and-path-img"><img src="./legend-images/boeschung.png" alt="Scarpata">Scarpata / Terrapieno</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/deich.png" alt="Argine">Argine</li>
+            <li class="legend-item line-and-path-img"></li> 
+
+            <li class="legend-item line-and-path-img"><img src="./legend-images/zaun.png" alt="Recinzione">Recinzione</li>
+            <li class="legend-item line-and-path-img"><img src="./legend-images/hecke.png" alt="Siepe">Siepe</li>
         </ul>
     </div>
-    <hr/><div class="legend-section">
-        <span class="legend-title">Symboles</span>
+
+    <hr/>
+
+    <div class="legend-section">
+        <span class="legend-title">Simboli</span>
         <ul class="legend-list">
-            <li class="legend-item"><img src="./legend-images/kirche.png" alt="">Église</li>
-            <li class="legend-item"><img src="./legend-images/kapelle.png" alt="">Chapelle</li>
-            <li class="legend-item"><img src="./legend-images/burg.png" alt="">Château fort</li>
-            <li class="legend-item"><img src="./legend-images/burgruine.png" alt="">Ruine de château</li>
-            <li class="legend-item"><img src="./legend-images/schloss.png" alt="">Château, Manoir</li>
-            <li class="legend-item"><img src="./legend-images/schlossruine.png" alt="">Ruine de château</li>
-            <li class="legend-item"><img src="./legend-images/sportplatz.png" alt="">Terrain de sport</li>
-            <li class="legend-item"><img src="./legend-images/stadion.png" alt="">Stade</li>
-            <li class="legend-item"><img src="./legend-images/turm.png" alt="">Tour</li>
-            <li class="legend-item"><img src="./legend-images/aussichtsturm.png" alt="">Tour d'observation</li>
-            <li class="legend-item"><img src="./legend-images/wasserturm.png" alt="">Château d'eau</li>
-            <li class="legend-item"><img src="./legend-images/sendeturm.png" alt="">Antenne émettrice</li>
-            <li class="legend-item"><img src="./legend-images/mobilfunkmast.png" alt="">Pylône mobile</li>
-            <li class="legend-item"><img src="./legend-images/leuchtturm.png" alt="">Phare</li>
-            <li class="legend-item"><img src="./legend-images/aussichtspunkt.png" alt="">Point de vue</li>
-            <li class="legend-item"><img src="./legend-images/badestelle.png" alt="">Piscine, Baignade</li>
-            <li class="legend-item"><img src="./legend-images/camping.png" alt="">Camping</li>
-            <li class="legend-item"><img src="./legend-images/bergwerk.png" alt="">Mine</li>
-            <li class="legend-item"><img src="./legend-images/bergwerk_stillgelegt.png" alt="">Mine désaffectée</li>
-            <li class="legend-item"><img src="./legend-images/muehle.png" alt="">Moulin</li>
-            <li class="legend-item"><img src="./legend-images/denkmal.png" alt="">Monument, Mémorial</li>
-            <li class="legend-item"><img src="./legend-images/wegkreuz.png" alt="">Calvaire</li>
-            <li class="legend-item"><img src="./legend-images/huegelgrab.png" alt="">Tumulus</li>
-            <li class="legend-item"><img src="./legend-images/gipfel.png" alt="">Sommet</li>
-            <li class="legend-item"><img src="./legend-images/gipfelkreuz.png" alt="">Croix de sommet</li>
-            <li class="legend-item"><img src="./legend-images/quelle.png" alt="">Source</li>
-            <li class="legend-item"><img src="./legend-images/hoehle.png" alt="">Entrée de grotte</li>
-            <li class="legend-item"><img src="./legend-images/kreuz.png" alt="">Croix</li>
-            <li class="legend-item"><img src="./legend-images/sattel.png" alt="">Col / Selle</li>
-            <li class="legend-item"><img src="./legend-images/laubbaum.png" alt="">Arbre remarquable</li>
-            <li class="legend-item"><img src="./legend-images/doline.png" alt="">Doline</li>
-            <li class="legend-item"><img src="./legend-images/kraftwerk.png" alt="">Centrale électrique</li>
-            <li class="legend-item"><img src="./legend-images/photovoltaikanlage.png" alt="">Photovoltaïque</li>
-            <li class="legend-item"><img src="./legend-images/windkraftanlage.png" alt="">Éolienne</li>
-            <li class="legend-item"><img src="./legend-images/schornstein.png" alt="">Cheminée</li>
+            <li class="legend-item"><img src="./legend-images/kirche.png" alt="Chiesa">Chiesa</li>
+            <li class="legend-item"><img src="./legend-images/kapelle.png" alt="Cappella">Cappella</li>
+            <li class="legend-item"><img src="./legend-images/burg.png" alt="Castello">Castello, Fortezza</li>
+
+            <li class="legend-item"><img src="./legend-images/burgruine.png" alt="Rovine di castello">Rovine di castello</li>
+            <li class="legend-item"><img src="./legend-images/schloss.png" alt="Palazzo">Palazzo, Dimora</li>
+            <li class="legend-item"><img src="./legend-images/schlossruine.png" alt="Rovine di palazzo">Rovine di palazzo</li>
+
+            <li class="legend-item"><img src="./legend-images/sportplatz.png" alt="Campo sportivo">Campo sportivo</li>
+            <li class="legend-item"><img src="./legend-images/stadion.png" alt="Stadio">Stadio</li>
+            <li class="legend-item"><img src="./legend-images/turm.png" alt="Torre">Torre</li>
+
+            <li class="legend-item"><img src="./legend-images/aussichtsturm.png" alt="Torre panoramica">Torre panoramica</li>
+            <li class="legend-item"><img src="./legend-images/wasserturm.png" alt="Torre dell'acqua">Serbatoio a torre</li>
+            <li class="legend-item"><img src="./legend-images/sendeturm.png" alt="Torre di trasmissione">Torre radio</li>
+
+            <li class="legend-item"><img src="./legend-images/mobilfunkmast.png" alt="Antenna mobile">Antenna cellulare</li>
+            <li class="legend-item"><img src="./legend-images/leuchtturm.png" alt="Faro">Faro</li>
+            <li class="legend-item"><img src="./legend-images/aussichtspunkt.png" alt="Punto panoramico">Punto panoramico</li>
+
+            <li class="legend-item"><img src="./legend-images/badestelle.png" alt="Zona balneazione">Piscina, Area balneabile</li>
+            <li class="legend-item"><img src="./legend-images/camping.png" alt="Campeggio">Campeggio</li>
+            <li class="legend-item"><img src="./legend-images/bergwerk.png" alt="Miniera">Miniera</li>
+
+            <li class="legend-item"><img src="./legend-images/bergwerk_stillgelegt.png" alt="Miniera dismessa">Miniera (dismessa)</li>
+            <li class="legend-item"><img src="./legend-images/muehle.png" alt="Mulino">Mulino</li>
+
+            <li class="legend-item"><img src="./legend-images/denkmal.png" alt="Monumento">Monumento, Memoriale</li>
+            <li class="legend-item"><img src="./legend-images/wegkreuz.png" alt="Croce di via">Croce di via / edicola</li>
+            <li class="legend-item"><img src="./legend-images/huegelgrab.png" alt="Tumulo">Tumulo</li>
+
+            <li class="legend-item"><img src="./legend-images/gipfel.png" alt="Vetta">Vetta / Cima</li>
+            <li class="legend-item"><img src="./legend-images/gipfelkreuz.png" alt="Croce di vetta">Croce di vetta</li>
+            <li class="legend-item"><img src="./legend-images/quelle.png" alt="Sorgente">Sorgente</li>
+
+            <li class="legend-item"><img src="./legend-images/hoehle.png" alt="Ingresso grotta">Ingresso grotta</li>
+            <li class="legend-item"><img src="./legend-images/kreuz.png" alt="Croce">Croce</li>
+            <li class="legend-item"><img src="./legend-images/sattel.png" alt="Passo">Sella / Valico</li>
+
+            <li class="legend-item"><img src="./legend-images/laubbaum.png" alt="Albero monumentale">Albero monumentale</li>
+            <li class="legend-item"><img src="./legend-images/doline.png" alt="Dolina">Dolina</li>
+            <li class="legend-item"><img src="./legend-images/kraftwerk.png" alt="Centrale elettrica">Centrale elettrica</li>
+
+            <li class="legend-item"><img src="./legend-images/photovoltaikanlage.png" alt="Impianto fotovoltaico">Impianto fotovoltaico</li>
+            <li class="legend-item"><img src="./legend-images/windkraftanlage.png" alt="Turbina eolica">Turbina eolica</li>
+            <li class="legend-item"><img src="./legend-images/schornstein.png" alt="Ciminiera">Ciminiera</li>
         </ul>
     </div>
 </body>

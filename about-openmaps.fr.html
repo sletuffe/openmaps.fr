@@ -1,155 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About openmaps.fr</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #3498db;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        h3 {
-            color: #2c3e50;
-        }
-        p, ul {
-            margin-bottom: 15px;
-        }
-        strong {
-            font-weight: bold;
-            color: #e74c3c;
-        }
-        .note {
-            background-color: #f9e79f;
-            padding: 10px;
-            border-left: 5px solid #f39c12;
-            margin: 20px 0;
-        }
-        code {
-            background-color: #eee;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            color: #c0392b;
-        }
-        pre {
-            background-color: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        hr {
-            border: 0;
-            height: 1px;
-            background-color: #bdc3c7;
-            margin: 30px 0;
-        }
-        .status-badge {
-            display: inline-block;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About openmaps.fr</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        color: #3498db;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 5px;
+        margin-top: 30px;
+    }
+    h3 { color: #2c3e50; }
+    p, ul, ol { margin-bottom: 15px; }
+    li { margin-bottom: 5px; }
+    strong { font-weight: bold; color: #e74c3c; }
+    code {
+        background-color: #eee;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+        color: #c0392b;
+    }
+    pre {
+        background-color: #ecf0f1;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+    }
+    pre code { background: none; padding: 0; color: inherit; }
+    a { color: #3498db; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr {
+        border: 0;
+        height: 1px;
+        background-color: #bdc3c7;
+        margin: 30px 0;
+    }
+    blockquote {
+        background-color: #f9e79f;
+        border-left: 5px solid #f39c12;
+        margin: 20px 0;
+        padding: 10px 15px;
+        border-radius: 0 4px 4px 0;
+    }
+    blockquote p { margin: 0; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>About openmaps.fr</h1>
-
-        <p>
-            <a href="https://openmaps.fr">Openmaps.fr</a> is a free <a href="https://wiki.openstreetmap.org/wiki/TMS">Tile Map Service</a> based on <a href="https://wiki.openstreetmap.org/">OpenStreetMap</a> datas providing 2 maps:
-        </p>
-
-        <ul>
-            <li><a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a>: An almost clone of <a href="https://wiki.openstreetmap.org/wiki/OpenTopoMap">OpenTopoMap</a></li>
-            <li><a href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a>: Another map for hiking (<a href="https://github.com/sletuffe/OpenHikingMap">git repo</a>)</li>
-        </ul>
-
-        <p>All styles and code are released as free software (Check each one's specific license) on their GitHub repositories.</p>
-
-        <hr>
-
-        <h2>Can it be used freely in another website/application ?</h2>
-
-        <p>
-            The service is designed for third-party use. However, there are no guarantees: the service might stop any time, or I might block IP or web site if there are too much requests. 
-            If you include tiles from <code>tile.openmaps.fr</code> in your project, you <strong>must</strong> accept and respect the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a> where you will also find the TMS URLs for those two map styles.
-        </p>
-
-        <hr>
-
-        <h2>Hardware used after 2025-12-15</h2>
-        <p>
-            \o/ I took advantage of OVHcloud's Blackfriday offers and got me a SYS-LE-5. It is a <strong>8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM</strong> for 889 € / year. 
-            This should be ideal for handling intensive rendering and high usage.
-        </p>
-
-        <hr>
-
-        <h2>Funding</h2>
-        <p>To help financing for server costs and maintaining the service functional, please check the <a href="https://openmaps.fr/donate">Funding openmaps.fr</a> page.</p>
-
-        <hr>
-
-        <h2>Status of the tile.openmaps.fr service</h2>
-        <ul>
-            <li>RealTime uptime calculator: <a href="https://status.openmaps.fr/">https://status.openmaps.fr/</a> (gratefully provided by <a href="https://www.edmc73.com/">EDMC73 french FreeLance</a>)</li>
-            <li>2025-12-16: <span class="status-badge" style="background-color:lime;">server running OK</span></li>
-            <li>OSM datas up to 2026-02-03 (this information is manually updated if I don't forget!)</li>
-        </ul>
-
-        <hr>
-
-        <h2>FAQ</h2>
-        <h3>Is there an offline version of the map ?</h3>
-        <p>Those maps are generated by mapnik in millions of png image 256x256 tiles. Storing all of them world wide would be close to impossible, but see the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a>: it is possible for small parts. However, since there are limits for downloads, you will only be able to collect small areas.</p>
-
-        <h3>Why are datas updated so rarely ?</h3>
-        <p>Starting from December 2025 and a new more powerful server, I hope I'll be able to update datas every 6 months or so. Server shouldn't be the limit, only my available time!</p>
-
-        <h3>Why are there so few functions on the interface ?</h3>
-        <p>The web interface is only meant to be a demonstrator for testing and comparisons; it is not meant for hike planning. Many other tools out there are much better suited for GPX generation, routing, or feature search.</p>
-
-        <hr>
-
-        <h2>Reporting problems or discussions</h2>
-        <ul>
-            <li><strong>Technical issues:</strong> <a href="https://github.com/sletuffe/openmaps.fr/issues">GitHub OpenMaps tracker</a></li>
-            <li><strong>Discussions/Questions:</strong> <a href="https://github.com/sletuffe/openmaps.fr/discussions/">GitHub Discussions</a></li>
-            <li><strong>Private contact:</strong> <a href="mailto:sly@openmaps.fr">sly@openmaps.fr</a></li>
-        </ul>
-    </div>
+  <div class="container">
+<h2 id="about-openmaps.fr">About openmaps.fr</h2>
+<p><a href="https://openmaps.fr">Openmaps.fr</a> is a free <a
+href="https://wiki.openstreetmap.org/wiki/TMS">Tile Map Service</a>
+based on <a href="https://wiki.openstreetmap.org/">OpenStreetMap</a>
+datas providing 2 maps :</p>
+<ul>
+<li><a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a>
+An almost clone of <a
+href="https://wiki.openstreetmap.org/wiki/OpenTopoMap">OpenTopoMap</a>
+and</li>
+<li><a
+href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a>
+Another map for hiking <a
+href="https://github.com/sletuffe/OpenHikingMap">git repo</a>.</li>
+</ul>
+<p>All styles and code are release as free software (Check each one’s
+specific license) on their github’s repo</p>
+<h2 id="can-it-be-used-freely-in-another-websiteapplication">Can it be
+used freely in another website/application ?</h2>
+<p>The service is designed for third-party use. However, there are no
+guarantees : the service might stop any time, or I might block IP or web
+site if there are too much requests. If you include tiles from
+tile.openmaps.fr in your project, you must accept and respect the <a
+href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a>
+where you will also find the TMS URLs for those two map styles.</p>
+<h2 id="hardware-used-after-2025-12-15">Hardware used after
+2025-12-15</h2>
+<p>/ I took advantage of OVHcloud’s Blackfriday offers and got me a
+SYS-LE-5. It is a 8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM for
+889 € / year This should be ideal for handling intensive rendering and
+high usage.</p>
+<h2 id="funding">Funding</h2>
+<p>To help financing for server costs and maintaining the service
+functionnal, please chech the <a
+href="https://openmaps.fr/donate">Funding openmaps.fr</a></p>
+<h2 id="status-of-the-tile.openmaps.fr-service">Status of the
+tile.openmaps.fr service</h2>
+<ul>
+<li>RealTime uptime calculator : https://status.openmaps.fr/ (gratefully
+provided by <a href="https://www.edmc73.com/">EDMC73 french
+FreeLance</a> )</li>
+<li>2025-12-16 : <span
+style="background-color:lime;font-weight:bold; padding: 1pt">server
+running OK</span></li>
+<li>OSM datas up to 2026-02-03 (this information is manually updated if
+I don’t forget!) <!--
+Examples to copy :
+* 2013-03-30 : <span style="background-color:lime;font-weight:bold; padding: 1pt">db not too old and server running OK</span>
+* 2012-04-01 : <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but db is old due to licence change</span>
+* 2025-04-25 : <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but slow response time due to DB upgradee inducing re-rendering for a few days</span>
+<span style="background-color:lime;font-weight:bold; padding: 1pt">db up to date and server running OK</span>
+<span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but db is old and catching up</span>
+<span style="background-color:orange;font-weight:bold; padding: 1pt">Server is in degraded mode, only old tiles are served, generation of new is not possible</span>
+<span style="background-color:red;font-weight:bold; padding: 1pt">Service is DOWN : reason and back online estimated date</span>
+<span style="background-color:orange;font-weight:bold; padding: 1pt">Service is SLOW : One crached disk brought the RAID0 array down, it was replaced but lots of tiles were lost and re-rendering is at full speed (which means it is very slow !)</span>
+<span style="background-color:red;font-weight:bold; padding: 1pt">* 2013-05-24 Service is DOWN : The RAID 0 array holding the database and tile failed due to a disk drive crash, waiting for replacement and database rebuild, might take a few days before back online</span>
+--></li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="is-there-an-offline-version-of-the-map">Is there an offline
+version of the map ?</h3>
+<p>Those maps are generated by mapnik in millions of png image 256x256
+tiles, storing all of them world wide would be close to impossible, but,
+see the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage
+policy</a> it is possible on small part, however since there are limits
+for downloads you will only be able to collect small areas.</p>
+<h3 id="why-are-datas-updated-so-rarely">Why are datas updated so rarely
+?</h3>
+<p>Starting from December 2025 and a new more powerfull server, I hope
+I’ll be able to update datas every 6 month or so. Server shouldn’t be
+the limit, only my available time !</p>
+<h3
+id="why-are-there-so-few-functions-on-the-httpsopenmaps.fr-interface">Why
+are there so few functions on the https://openmaps.fr interface ?</h3>
+<p>The web interface is only meant to be a demonstrator for the
+background maps, testing, and comparisons with other maps, it is not
+meant… to be used for hike planning ;-) and I don’t plan on improving
+it. Many other tools out there are much better suited for gpx
+generation, routing, elevation profiles or features search.</p>
+<p>Both OpenTopoMap-R and OpenHikingMap maps should be seen as “building
+blocs” for other better apps or websites to use as background map.</p>
+<h2 id="reporting-problems-or-discussions-about-openmaps.fr">Reporting
+problems or discussions about openmaps.fr</h2>
+<ul>
+<li><p>If you want to report problems about the tile.openmaps.fr tile
+service (outage, slow, unavailable) please use this <a
+href="https://github.com/sletuffe/openmaps.fr/issues">github OpenMaps
+tracker</a></p></li>
+<li><p>If you would like to join the discussion or have questions,
+please use <a
+href="https://github.com/sletuffe/openmaps.fr/discussions/">the
+discussion pages on the same github repo</a></p></li>
+<li><p>And if you want to contact me privately you can email me at <a
+href="sly@openmaps.fr">sly@openmaps.fr</a></p></li>
+</ul>
+  </div>
 </body>
 </html>

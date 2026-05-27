@@ -108,16 +108,6 @@
             If you include tiles from <code>tile.openmaps.fr</code> in your project, you <strong>must</strong> accept and respect the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a> where you will also find the TMS URLs for those two map styles.
         </p>
 
-        <div class="note">
-            Since ~2011, due to increasing mass download applications targeting and hampering the OpenHikingMap server, I had to take measures in order to give priority to "browsing users". The current limit is that asking more than 1000 not already rendered tiles or 2000 tiles (Total) will get your connection throttled to 0.2 Tile per second or 0.5 per second respectively.
-        </div>
-
-        <p>Current <code>mod_tile</code> config:</p>
-<pre>
-ModTileThrottlingTiles 2000 0.5
-ModTileThrottlingRenders 1000 0.2
-</pre>
-
         <hr>
 
         <h2>Hardware used after 2025-12-15</h2>

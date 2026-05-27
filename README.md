@@ -14,15 +14,6 @@ All styles and code are release as free software (Check each one's specific lice
 The service is designed for third-party use. However, there are no guarantees : the service might stop any time, or I might block IP or web site if there are too much requests.
 If you include tiles from tile.openmaps.fr in your project, you must accept and respect the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html) where you will also find the TMS URLs for those two map styles.
 
-* Since ~2011, due to increasing mass dowload applications targeting and hampering the OpenHikingMap server I had to take measures in order to give priority to "browsing users". The current (since 2023) limit is that asking more than 1000 not allready rendered tiles or 2000 tiles (Total) will get your connexion throttled to 0.2 Tile per seconds or 0.5 per seconds respectively. I regret having to implement these restrictions, as they may affect legitimate users; unfortunately, the current server capacity is insufficient to handle such high CPU loads.
-(live config should be in the config/common-for-tiles.conf file)
-
-Current mod_tile config :
-```
-  ModTileThrottlingTiles 2000 0.5
-  ModTileThrottlingRenders 1000 0.2
-```
-
 ## Hardware used after 2025-12-15
 \o/ I took advantage of OVHcloud's Blackfriday offers and got me a SYS-LE-5. It is a 8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM for 889 € / year
 This should be ideal for handling intensive rendering and high usage.

@@ -73,39 +73,37 @@
 <body>
   <div class="container">
 <p><a href="https://openmaps.fr/about-openmaps.fr.html">Openmaps.fr (See
-presentation page)</a> ’s maps : <a
+presentation page)</a>’s maps : <a
 href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a>
-and <a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMaps</a>
-are free software mapnik styles. But delivering tiles has a cost and our
+and <a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a>
+are free software mapnik styles. But delivering tiles has a cost and my
 <strong>servers are not free</strong>: they are <a
 href="https://openmaps.fr/donate">funded by donations</a>, and capacity
 is limited. To protect the service from high usage and help fund server
 costs, you <strong>must</strong> follow this policy when using tiles
 from <code>tile.openmaps.fr</code>.</p>
-<p>OpenMaps.fr’s maps are meant to be used freely for non commercial
-projects because our ressources are limited. If the usage of those tiles
-is for a free projects (free as in “free beer”) and the volume not too
-high, usage should be allowed.</p>
+<p>OpenMaps.fr’s maps are meant to be used freely for non-commercial
+projects because my resources are limited. If the usage of those tiles
+is for a free project (free as in “free of charge”) and the volume not
+too high, usage should be allowed.</p>
 <p>There is no precise definition for this “too high volume”, but as a
-rule of thumb, downloading less that 500k tiles per month will be
-considered acceptable “low volume”, for higher volume in free projects,
-we might need an arangement.</p>
-<p>You are not required to use a specific API, apikey, or prior
-subscription. However, heavy or inappropriate use harms others ability
-to view the map. We may block access, without notice, if your usage
-degrades the service. We may try to contact you if possible, but cannot
-guarantee this.</p>
+rule of thumb, downloading less than 400k tiles per month will be
+considered acceptable “low volume”. For higher volume in free projects,
+please contact me for an arrangement.</p>
+<p>You are not required to use a specific apikey or prior subscription.
+However, heavy or inappropriate use harms others’ ability to view the
+map. I may block access, without notice, if your usage degrades the
+service. I may try to contact you if possible, but cannot guarantee
+this.</p>
 <p>Availability is <strong>best-effort</strong>: there is <strong>no SLA
 or guarantee</strong>.</p>
-<p>If you cannot meet these requirements, please use an
-<strong>alternative OSM-derived service</strong> (see below), or run
-your own.</p>
+<p><strong>If you are interested in a commercial service with fewer
+restrictions and an SLA, please contact me.</strong></p>
 <hr />
-<h2 id="tile-usage-policy-for-the-tile.openmaps.fr-service">1. Tile
-Usage Policy for the tile.openmaps.fr service</h2>
+<h2 id="rules">1. Rules</h2>
 <p><strong>You must:</strong></p>
 <ul>
-<li>Access OpenTopoMaps with this URL
+<li>Access OpenTopoMap-R with this URL
 <code>https://tile.openmaps.fr/opentopomap/{z}/{x}/{y}.png</code>.</li>
 <li>Access OpenHikingMap with this URL
 <code>https://tile.openmaps.fr/openhikingmap/{z}/{x}/{y}.png</code>.
@@ -114,22 +112,19 @@ Usage Policy for the tile.openmaps.fr service</h2>
 individuals to interact with the map or produced work to see the
 <strong>licence attribution</strong>, for OpenStreetMap contributors,
 for the style’s information, and a donation link to encourage your users
-to contibute to the openmaps.fr server(s) cost. (In the same way you
+to contribute to the openmaps.fr server(s) cost (in the same way you
 would with the <a
 href="https://osmfoundation.org/wiki/Licence/Attribution_Guidelines">OSM
-Attrubution guidelines</a></li>
+Attribution guidelines</a>).</li>
 </ul>
-<p>For OpenHikingMaps’s attribution please use the following html
+<p>For OpenHikingMap’s attribution please use the following html
 code:</p>
 <pre><code>&#39;&lt;a href=&quot;https://wiki.openstreetmap.org/wiki/OpenHikingMap&quot;&gt;&amp;copy; OpenHikingMap&lt;/a&gt; &lt;a href=&quot;https://openmaps.fr/donate&quot;&gt;❤️ Donation&lt;/a&gt; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;&amp;copy; OpenStreetMap&lt;/a&gt;&#39;</code></pre>
-<p>For OpenTopoMaps’s attribution please use</p>
+<p>For OpenTopoMap-R’s attribution please use:</p>
 <pre><code>&#39;&lt;a href=&quot;https://github.com/sletuffe/OpenTopoMap&quot;&gt;&amp;copy; OpenTopoMap-R&lt;/a&gt; &lt;a href=&quot;https://openmaps.fr/donate&quot;&gt;❤️ Donation&lt;/a&gt; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;&amp;copy; OpenStreetMap&lt;/a&gt;&#39;</code></pre>
-<p>In both attribution texte, there is a link to the style’s explanation
-page, a donation link because users tends to know nothing about how are
-those map funded, and a attribution to OpenStreetMap datas.</p>
 <ul>
 <li>Send a <strong>valid HTTP User-Agent</strong> that clearly
-identifies your application and not you library’s default
+identifies your application and not your library’s default
 (e.g. <code>okhttp/x.y</code>, <code>Go-http-client/1.1</code>,
 <code>python-requests/</code>)</li>
 <li>From web pages, ensure a valid <strong>HTTP Referer</strong> header
@@ -137,9 +132,7 @@ is sent.</li>
 </ul>
 <p><strong>And don’t:</strong></p>
 <ul>
-<li>Bulk download (“scrape”) tiles or offer prefetch features. apache
-mod_tile has been configure to rate limit high volume from single
-IP</li>
+<li>Bulk download (“scrape”) tiles or use prefetch features.</li>
 <li>Masquerade as another app’s User-Agent, or rely on a library’s
 default User-Agent.</li>
 </ul>
@@ -149,29 +142,10 @@ constraints. Commercial services, or those that seek donations, should
 be especially aware that access may be withdrawn at any point: you may
 no longer be able to serve your paying customers if access is
 withdrawn.</p>
-<p>We may try to contact you (for example, via your
+<p>I may try to contact you (for example, via your
 <code>User-Agent</code> or public contact details) if there is a
 problem, but this may not always be possible. Access may be
 <strong>blocked without prior notice</strong>.</p>
-<h2 id="alternatives-osm-derived-services">3. Alternatives: OSM-derived
-services</h2>
-<p><strong>Hosted tile services based on OSM data</strong></p>
-<ul>
-<li>Community list: <a
-href="https://wiki.openstreetmap.org/wiki/Raster_tile_providers">https://wiki.openstreetmap.org/wiki/Raster_tile_providers</a></li>
-</ul>
-<p><strong>Commercial providers</strong></p>
-<ul>
-<li>See: <a
-href="https://wiki.openstreetmap.org/wiki/Commercial_OSM_Software_and_Services">Commercial
-OSM Software and Services</a> and <a
-href="http://switch2osm.org/providers/">https://switch2osm.org/providers/</a></li>
-</ul>
-<p><strong>Run your own tiles</strong></p>
-<ul>
-<li>Up-to-date guidance: <a
-href="http://switch2osm.org/">http://switch2osm.org/</a></li>
-</ul>
   </div>
 </body>
 </html>

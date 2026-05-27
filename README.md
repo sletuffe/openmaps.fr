@@ -11,7 +11,7 @@ All styles and code are release as free software (Check each one's specific lice
 
 ## Can it be used freely in another website/application ?
 
-The service is free to use for non-commercial projects with a reasonable tile consumption. There are no formal guarantees: the service might stop at any time, or I may throttle or block sources that generate excessive load.
+The service is free to use for non-commercial projects with a reasonable tile consumption. Current restrictions are that any single IP requesting more than 5000 tiles in one hour is blocked for a few hours, and services with more than 400k tiles downloaded per month will likely be restricted. There are no formal guarantees: the service might stop at any time, or I may throttle or block sources that generate excessive load.
 
 If you include tiles from `tile.openmaps.fr` in your project, you **must** accept and respect the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html) where you will also find the TMS URLs for the two map styles.
 

@@ -11,8 +11,11 @@ All styles and code are release as free software (Check each one's specific lice
 
 ## Can it be used freely in another website/application ?
 
-The service is designed for third-party use. However, there are no guarantees : the service might stop any time, or I might block IP or web site if there are too much requests.
-If you include tiles from tile.openmaps.fr in your project, you must accept and respect the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html) where you will also find the TMS URLs for those two map styles.
+The service is free to use for non-commercial projects with a reasonable tile consumption. There are no formal guarantees: the service might stop at any time, or I may throttle or block sources that generate excessive load.
+
+If you include tiles from `tile.openmaps.fr` in your project, you **must** accept and respect the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html) where you will also find the TMS URLs for the two map styles.
+
+For **commercial services** or **high-volume usage**, please contact [sly@openmaps.fr](mailto:sly@openmaps.fr) to discuss a paid professional arrangement with fewer restrictions.
 
 ## Hardware used after 2025-12-15
 \o/ I took advantage of OVHcloud's Blackfriday offers and got me a SYS-LE-5. It is a 8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM for 889 € / year

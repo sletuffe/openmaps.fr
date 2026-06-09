@@ -56,8 +56,8 @@ Starting from December 2025 and a new more powerfull server, I hope I'll be able
 
 Those applications natively include openmaps.fr tiles, no manual configuration needed:
 
-- <img src="./images/logo-isomaps.png" alt="IsoMaps" height="24"> [IsoMaps](https://www.iso-maps.com/) — a cross-platform outdoor GPS app.
 - <img src="./images/logo-alpinequest.png" alt="AlpineQuest" height="24"> [AlpineQuest](https://alpinequest.net/) — a powerful Android hiking app.
+- <img src="./images/logo-isomaps.png" alt="IsoMaps" height="24"> [IsoMaps](https://www.iso-maps.com/) — a cross-platform outdoor GPS app.
 
 ### Why are there so few functions on the https://openmaps.fr interface ?
 The web interface is only meant to be a demonstrator for the background maps, testing, and comparisons with other maps, it is not meant... to be used for hike planning ;-) and I don't plan on improving it. Many other tools out there are much better suited for gpx generation, routing, elevation profiles or features search.

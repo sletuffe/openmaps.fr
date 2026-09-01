@@ -28,8 +28,8 @@ To help financing for server costs and maintaining the service functionnal, plea
 ## Status of the tile.openmaps.fr service
 
 * RealTime uptime calculator : https://status.openmaps.fr/ (gratefully provided by [EDMC73 french FreeLance](https://www.edmc73.com/) )
-* 2025-12-16 : <span style="background-color:lime;font-weight:bold; padding: 1pt">server running OK</span>
-* OSM datas up to 2026-02-03 (this information is manually updated if I don't forget!)
+* 2026-06-28 : <span style="background-color:lime;font-weight:bold; padding: 1pt">server running OK</span>
+* From 2026-06-28 OSM datas should be kept up to date automatically. (Might be a one day lag however)
 <!--
 Examples to copy :
 * 2013-03-30 : <span style="background-color:lime;font-weight:bold; padding: 1pt">db not too old and server running OK</span>

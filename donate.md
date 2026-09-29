@@ -16,6 +16,6 @@ For the 2026 expenses:
 
 * 2 days a year of time spent on maintenance, OSM data re-import, and blocking excessive usage or abuse (~500 € /year)
 
-> **Note:** during 2026, donations weren't quite enough to cover these costs — possibly because users simply weren't aware of the situation. So, since September 2026, I've been trying to inform users by showing a substitute tile on about 0.25% of requests, asking for a donation. **Once the yearly costs are covered, I'll turn that tile off until the following year.**
+> **Note:** during 2026, donations weren't quite enough to cover these costs — possibly because users simply weren't aware of the situation. So, since September 2026, I've been trying to inform users by showing a substitute tile on about 0.5% of requests (roughly 1 tile in 200), asking for a donation. **Once the yearly costs are covered, I'll turn that tile off until the following year.**
 >
 > <img width="254" src="images/tile-openhikingmap-please-donate.png" alt="Example of the donation tile shown on OpenHikingMap">

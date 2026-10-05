@@ -1,6 +1,6 @@
 ## ❤️ Funding openmaps.fr
 
-[Openmaps.fr (See presentation page)](https://openmaps.fr/about-openmaps.fr.html) based on [OpenStreetMap](https://wiki.openstreetmap.org/) datas provides both [OpenTopoMap-R](https://github.com/sletuffe/OpenTopoMap) and [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) free of charge for reasonable volume (<400k tiles) and non-commercial services. However, operating and renting servers is not free. There are two crowdfunding platforms to help fund the project:
+[Openmaps.fr (See presentation page)](https://openmaps.fr/about-openmaps.fr.html) based on [OpenStreetMap](https://wiki.openstreetmap.org/) datas provides both [OpenTopoMap-R](https://github.com/sletuffe/OpenTopoMap) and [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) free of charge for reasonable volume (<500k tiles/month) and non-commercial services. However, operating and renting servers is not free. There are two crowdfunding platforms to help fund the project:
 
 * <a href="https://ko-fi.com/openmapsfr"> <img width="150" src="https://storage.ko-fi.com/cdn/fullLogoKofi.png"> ko-fi.com/openmapsfr</a>: 1.5% fee + 0.25 cents and allows for one-time donations as well as recurring ones. **Preferred**, because there is a target and a counter to track progress toward the yearly costs.
 

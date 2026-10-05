@@ -1,63 +1,62 @@
 ## About openmaps.fr
 
-[Openmaps.fr](https://openmaps.fr) is a free [Tile Map Service](https://wiki.openstreetmap.org/wiki/TMS) based on [OpenStreetMap](https://wiki.openstreetmap.org/) datas providing 2 maps :
+[Openmaps.fr](https://openmaps.fr) is a free [Tile Map Service](https://wiki.openstreetmap.org/wiki/TMS) based on [OpenStreetMap](https://wiki.openstreetmap.org/) data providing 2 maps:
 
-* [OpenTopoMap-R](https://github.com/sletuffe/OpenTopoMap) An almost clone of [OpenTopoMap](https://wiki.openstreetmap.org/wiki/OpenTopoMap)
-and
-* [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) Another map for hiking [git repo](https://github.com/sletuffe/OpenHikingMap).
+* [OpenTopoMap-R](https://github.com/sletuffe/OpenTopoMap) – a near-clone of [OpenTopoMap](https://wiki.openstreetmap.org/wiki/OpenTopoMap)
+* [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) – another map for hiking ([git repo](https://github.com/sletuffe/OpenHikingMap))
 
 
-All styles and code are release as free software (Check each one's specific license) on their github's repo
+All styles and code are released as free software (Check each one's specific license) on their GitHub repos.
 
-## Can it be used freely in another website/application ?
+## Can it be used freely in another website/application?
 
-The service is free to use for non-commercial projects with a reasonable tile consumption. Current restrictions are that any single IP requesting more than 5000 tiles in one hour is blocked until next hour, and services with more than 400k tiles downloaded per month will likely be restricted. There are no formal guarantees: the service might stop at any time, or I may throttle or block sources that generate excessive load.
+The service is free to use for non-commercial projects with a reasonable tile consumption. Current restrictions are that any single IP requesting more than 5000 tiles in one hour is blocked until next hour, and services downloading more than 500k tiles per month exceed the free tier and will be restricted. There are no formal guarantees: the service might stop at any time, or I may throttle or block sources that generate excessive load.
 
 If you include tiles from `tile.openmaps.fr` in your project, you **must** accept and respect the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html) where you will also find the TMS URLs for the two map styles.
 
 For **commercial services** or **higher-volume usage**, please contact [sly@openmaps.fr](mailto:sly@openmaps.fr) to discuss a paid professional arrangement with fewer restrictions.
 
-## Hardware used after 2025-12-15
-\o/ I took advantage of OVHcloud's Blackfriday offers and got me a SYS-LE-5. It is a 8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM for 889 € / year
-This should be ideal for handling intensive rendering and high usage.
+## Hardware used since 2025-12-15
+
+The service runs on an OVHcloud Black Friday offer: SYS-LE-5. An 8-core Xeon E-2288G3 + 3 × 2 TB NVMe + 64 GB RAM for 889 € excl. VAT / year. This should be ideal for handling intensive rendering and high usage.
 
 ## Funding
 
-To help financing for server costs and maintaining the service functionnal, please chech the [Funding openmaps.fr](https://openmaps.fr/donate)
+To help finance server costs and keep the service functional, please check the [Funding openmaps.fr](https://openmaps.fr/donate).
 
 ## Status of the tile.openmaps.fr service
 
-* RealTime uptime calculator : https://status.openmaps.fr/ (gratefully provided by [EDMC73 french FreeLance](https://www.edmc73.com/) )
-* Since 2026-06-28 OSM datas should be kept up to date automatically. (Might be a one day lag however)
+* Real-time uptime monitor: https://status.openmaps.fr/ (gratefully provided by [EDMC73, a French freelancer](https://www.edmc73.com/))
+* Since 2026-06-28 OSM data should be kept up to date automatically (there may be a lag of up to one day).
 <!--
-Examples to copy :
+Examples to copy:
 * 2013-03-30 : <span style="background-color:lime;font-weight:bold; padding: 1pt">db not too old and server running OK</span>
 * 2012-04-01 : <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but db is old due to licence change</span>
-* 2025-04-25 : <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but slow response time due to DB upgradee inducing re-rendering for a few days</span>
+* 2025-04-25 : <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but slow response time due to DB upgrade inducing re-rendering for a few days</span>
 <span style="background-color:lime;font-weight:bold; padding: 1pt">db up to date and server running OK</span>
 <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but db is old and catching up</span>
 <span style="background-color:orange;font-weight:bold; padding: 1pt">Server is in degraded mode, only old tiles are served, generation of new is not possible</span>
 <span style="background-color:red;font-weight:bold; padding: 1pt">Service is DOWN : reason and back online estimated date</span>
-<span style="background-color:orange;font-weight:bold; padding: 1pt">Service is SLOW : One crached disk brought the RAID0 array down, it was replaced but lots of tiles were lost and re-rendering is at full speed (which means it is very slow !)</span>
+<span style="background-color:orange;font-weight:bold; padding: 1pt">Service is SLOW : One crashed disk brought the RAID0 array down, it was replaced but lots of tiles were lost and re-rendering is at full speed (which means it is very slow !)</span>
 <span style="background-color:red;font-weight:bold; padding: 1pt">* 2013-05-24 Service is DOWN : The RAID 0 array holding the database and tile failed due to a disk drive crash, waiting for replacement and database rebuild, might take a few days before back online</span>
 -->
 
 
 ## FAQ
-### Is there an offline version of the map ?
-Those maps are generated by mapnik in millions of png image 256x256 tiles, storing all of them world wide would be close to impossible, but, see the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html) it is possible on small part, however since there are limits for downloads you will only be able to collect small areas.
+### Is there an offline version of the map?
+Those maps are generated by mapnik as millions of 256×256 PNG image tiles. Storing all of them worldwide would be close to impossible. See the [Tile usage policy](https://openmaps.fr/tile-usage-policy.html): it is possible for small areas, but since downloads are limited you will not be able to collect much more.
 
-### Can this map be displayed on a smartphone app ?
+### Can this map be displayed on a smartphone app?
 
 Those applications natively include openmaps.fr tiles, no manual configuration needed:
 
 - <img src="./images/logo-alpinequest.png" alt="AlpineQuest" height="24"> [AlpineQuest](https://alpinequest.net/) — a powerful Android hiking app.
 - <img src="./images/logo-isomaps.png" alt="IsoMaps" height="24"> [IsoMaps](https://www.iso-maps.com/) — a cross-platform outdoor GPS app.
 
-### Why are there so few functions on the https://openmaps.fr interface ?
-The web interface is only meant to be a demonstrator for the background maps, testing, and comparisons with other maps, it is not meant... to be used for hike planning ;-) and I don't plan on improving it. Many other tools out there are much better suited for gpx generation, routing, elevation profiles or features search.
+### Why are there so few functions on the https://openmaps.fr interface?
+The web interface is only meant to be a demonstrator for the background maps, testing, and comparisons with other maps; it is not meant... to be used for hike planning ;-) and I don't plan on improving it. Many other tools out there are much better suited for GPX generation, routing, elevation profiles or feature search.
 
-Both OpenTopoMap-R and OpenHikingMap maps should be seen as "building blocs" for other better apps or websites to use as background map.
+Both OpenTopoMap-R and OpenHikingMap maps should be seen as "building blocks" for other better apps or websites to use as a background map.
 
 
 ## Reporting problems or discussions about openmaps.fr
@@ -65,6 +64,6 @@ Both OpenTopoMap-R and OpenHikingMap maps should be seen as "building blocs" for
 
 * If you would like to join the discussion or have questions, please use [the discussion pages on the same github repo](https://github.com/sletuffe/openmaps.fr/discussions/)
 
-* And if you want to contact me privately you can email me at [sly@openmaps.fr](sly@openmaps.fr)
+* And if you want to contact me privately you can email me at [sly@openmaps.fr](mailto:sly@openmaps.fr)
 
 

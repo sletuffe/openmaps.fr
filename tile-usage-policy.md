@@ -4,9 +4,9 @@ title: Tile Usage Policy for the tile.openmaps.fr service
 
 [Openmaps.fr (See presentation page)](https://openmaps.fr/about-openmaps.fr.html) 's maps : [OpenHikingMap](https://wiki.openstreetmap.org/wiki/OpenHikingMap) and [OpenTopoMaps](https://github.com/sletuffe/OpenTopoMap) are free software mapnik styles. But delivering tiles has a cost and our **servers are not free**: they are [funded by donations](https://openmaps.fr/donate), and capacity is limited. To protect the service from high usage and help fund server costs, you **must** follow this policy when using tiles from `tile.openmaps.fr`.
 
-OpenMaps.fr's maps are meant to be used freely for non commercial projects because our ressources are limited. If the usage of those tiles is for a free projects (free as in "free beer") and the volume not too high, usage should be allowed.
+OpenMaps.fr's maps are meant to be used freely for non commercial projects because our ressources are limited. If the usage of those tiles is for a free projects (free as in "free beer") and the volume not too high, usage will be allowed.
 
-There is no precise definition for this "too high volume", but as a rule of thumb, downloading less that 400k tiles per month will be considered acceptable "low volume", for higher volume in free projects, please contact me for an arangement.
+The limit is **500k tiles per month**. This is a firm limit, not a rule of thumb: any usage above 500k tiles per month is too high for the free service and will be restricted. For higher volume, please contact me for an arrangement.
 
 
 You are not required to use a specific apikey or prior subscription. However, heavy or inappropriate use harms others ability to view the map. We may block access, without notice, if your usage degrades the service. We may try to contact you if possible, but cannot guarantee this.

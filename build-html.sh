@@ -9,5 +9,5 @@ build() { # fichier.md  sortie.html  titre
 }
 
 build README.md            about-openmaps.fr.html "About openmaps.fr"
-build donate.md            donate.html            "Donate - openmaps.fr"
+build donate.md            donate.html            "Funding - openmaps.fr"
 build tile-usage-policy.md tile-usage-policy.html "Tile usage policy - openmaps.fr"

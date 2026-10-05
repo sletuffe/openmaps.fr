@@ -77,28 +77,27 @@
 <p><a href="https://openmaps.fr">Openmaps.fr</a> is a free <a
 href="https://wiki.openstreetmap.org/wiki/TMS">Tile Map Service</a>
 based on <a href="https://wiki.openstreetmap.org/">OpenStreetMap</a>
-datas providing 2 maps :</p>
+data providing 2 maps:</p>
 <ul>
 <li><a href="https://github.com/sletuffe/OpenTopoMap">OpenTopoMap-R</a>
-An almost clone of <a
-href="https://wiki.openstreetmap.org/wiki/OpenTopoMap">OpenTopoMap</a>
-and</li>
+– a near-clone of <a
+href="https://wiki.openstreetmap.org/wiki/OpenTopoMap">OpenTopoMap</a></li>
 <li><a
 href="https://wiki.openstreetmap.org/wiki/OpenHikingMap">OpenHikingMap</a>
-Another map for hiking <a
-href="https://github.com/sletuffe/OpenHikingMap">git repo</a>.</li>
+– another map for hiking (<a
+href="https://github.com/sletuffe/OpenHikingMap">git repo</a>)</li>
 </ul>
-<p>All styles and code are release as free software (Check each one’s
-specific license) on their github’s repo</p>
+<p>All styles and code are released as free software (Check each one’s
+specific license) on their GitHub repos.</p>
 <h2 id="can-it-be-used-freely-in-another-websiteapplication">Can it be
-used freely in another website/application ?</h2>
+used freely in another website/application?</h2>
 <p>The service is free to use for non-commercial projects with a
 reasonable tile consumption. Current restrictions are that any single IP
 requesting more than 5000 tiles in one hour is blocked until next hour,
-and services with more than 400k tiles downloaded per month will likely
-be restricted. There are no formal guarantees: the service might stop at
-any time, or I may throttle or block sources that generate excessive
-load.</p>
+and services downloading more than 500k tiles per month exceed the free
+tier and will be restricted. There are no formal guarantees: the service
+might stop at any time, or I may throttle or block sources that generate
+excessive load.</p>
 <p>If you include tiles from <code>tile.openmaps.fr</code> in your
 project, you <strong>must</strong> accept and respect the <a
 href="https://openmaps.fr/tile-usage-policy.html">Tile usage policy</a>
@@ -107,46 +106,46 @@ where you will also find the TMS URLs for the two map styles.</p>
 usage</strong>, please contact <a
 href="mailto:sly@openmaps.fr">sly@openmaps.fr</a> to discuss a paid
 professional arrangement with fewer restrictions.</p>
-<h2 id="hardware-used-after-2025-12-15">Hardware used after
+<h2 id="hardware-used-since-2025-12-15">Hardware used since
 2025-12-15</h2>
-<p>/ I took advantage of OVHcloud’s Blackfriday offers and got me a
-SYS-LE-5. It is a 8 core Xeon E-2288G3 + 3 * 2To NVMe + 64 Go RAM for
-889 € / year This should be ideal for handling intensive rendering and
-high usage.</p>
+<p>The service runs on an OVHcloud Black Friday offer: SYS-LE-5. An
+8-core Xeon E-2288G3 + 3 × 2 TB NVMe + 64 GB RAM for 889 € excl. VAT /
+year. This should be ideal for handling intensive rendering and high
+usage.</p>
 <h2 id="funding">Funding</h2>
-<p>To help financing for server costs and maintaining the service
-functionnal, please chech the <a
-href="https://openmaps.fr/donate">Funding openmaps.fr</a></p>
+<p>To help finance server costs and keep the service functional, please
+check the <a href="https://openmaps.fr/donate">Funding
+openmaps.fr</a>.</p>
 <h2 id="status-of-the-tile.openmaps.fr-service">Status of the
 tile.openmaps.fr service</h2>
 <ul>
-<li>RealTime uptime calculator : https://status.openmaps.fr/ (gratefully
-provided by <a href="https://www.edmc73.com/">EDMC73 french
-FreeLance</a> )</li>
-<li>Since 2026-06-28 OSM datas should be kept up to date automatically.
-(Might be a one day lag however) <!--
-Examples to copy :
+<li>Real-time uptime monitor: https://status.openmaps.fr/ (gratefully
+provided by <a href="https://www.edmc73.com/">EDMC73, a French
+freelancer</a>)</li>
+<li>Since 2026-06-28 OSM data should be kept up to date automatically
+(there may be a lag of up to one day). <!--
+Examples to copy:
 * 2013-03-30 : <span style="background-color:lime;font-weight:bold; padding: 1pt">db not too old and server running OK</span>
 * 2012-04-01 : <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but db is old due to licence change</span>
-* 2025-04-25 : <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but slow response time due to DB upgradee inducing re-rendering for a few days</span>
+* 2025-04-25 : <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but slow response time due to DB upgrade inducing re-rendering for a few days</span>
 <span style="background-color:lime;font-weight:bold; padding: 1pt">db up to date and server running OK</span>
 <span style="background-color:yellow;font-weight:bold; padding: 1pt">Server running OK, but db is old and catching up</span>
 <span style="background-color:orange;font-weight:bold; padding: 1pt">Server is in degraded mode, only old tiles are served, generation of new is not possible</span>
 <span style="background-color:red;font-weight:bold; padding: 1pt">Service is DOWN : reason and back online estimated date</span>
-<span style="background-color:orange;font-weight:bold; padding: 1pt">Service is SLOW : One crached disk brought the RAID0 array down, it was replaced but lots of tiles were lost and re-rendering is at full speed (which means it is very slow !)</span>
+<span style="background-color:orange;font-weight:bold; padding: 1pt">Service is SLOW : One crashed disk brought the RAID0 array down, it was replaced but lots of tiles were lost and re-rendering is at full speed (which means it is very slow !)</span>
 <span style="background-color:red;font-weight:bold; padding: 1pt">* 2013-05-24 Service is DOWN : The RAID 0 array holding the database and tile failed due to a disk drive crash, waiting for replacement and database rebuild, might take a few days before back online</span>
 --></li>
 </ul>
 <h2 id="faq">FAQ</h2>
 <h3 id="is-there-an-offline-version-of-the-map">Is there an offline
-version of the map ?</h3>
-<p>Those maps are generated by mapnik in millions of png image 256x256
-tiles, storing all of them world wide would be close to impossible, but,
-see the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage
-policy</a> it is possible on small part, however since there are limits
-for downloads you will only be able to collect small areas.</p>
+version of the map?</h3>
+<p>Those maps are generated by mapnik as millions of 256×256 PNG image
+tiles. Storing all of them worldwide would be close to impossible. See
+the <a href="https://openmaps.fr/tile-usage-policy.html">Tile usage
+policy</a>: it is possible for small areas, but since downloads are
+limited you will not be able to collect much more.</p>
 <h3 id="can-this-map-be-displayed-on-a-smartphone-app">Can this map be
-displayed on a smartphone app ?</h3>
+displayed on a smartphone app?</h3>
 <p>Those applications natively include openmaps.fr tiles, no manual
 configuration needed:</p>
 <ul>
@@ -159,14 +158,15 @@ GPS app.</li>
 </ul>
 <h3
 id="why-are-there-so-few-functions-on-the-httpsopenmaps.fr-interface">Why
-are there so few functions on the https://openmaps.fr interface ?</h3>
+are there so few functions on the https://openmaps.fr interface?</h3>
 <p>The web interface is only meant to be a demonstrator for the
-background maps, testing, and comparisons with other maps, it is not
+background maps, testing, and comparisons with other maps; it is not
 meant… to be used for hike planning ;-) and I don’t plan on improving
-it. Many other tools out there are much better suited for gpx
-generation, routing, elevation profiles or features search.</p>
+it. Many other tools out there are much better suited for GPX
+generation, routing, elevation profiles or feature search.</p>
 <p>Both OpenTopoMap-R and OpenHikingMap maps should be seen as “building
-blocs” for other better apps or websites to use as background map.</p>
+blocks” for other better apps or websites to use as a background
+map.</p>
 <h2 id="reporting-problems-or-discussions-about-openmaps.fr">Reporting
 problems or discussions about openmaps.fr</h2>
 <ul>
@@ -179,7 +179,7 @@ please use <a
 href="https://github.com/sletuffe/openmaps.fr/discussions/">the
 discussion pages on the same github repo</a></p></li>
 <li><p>And if you want to contact me privately you can email me at <a
-href="sly@openmaps.fr">sly@openmaps.fr</a></p></li>
+href="mailto:sly@openmaps.fr">sly@openmaps.fr</a></p></li>
 </ul>
   </div>
 </body>

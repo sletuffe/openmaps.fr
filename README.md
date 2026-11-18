@@ -18,7 +18,7 @@ For **commercial services** or **higher-volume usage**, please contact [sly@open
 
 ## Hardware used since 2025-12-15
 
-The service runs on an OVHcloud Black Friday offer: SYS-LE-5. An 8-core Xeon E-2288G3 + 3 × 2 TB NVMe + 64 GB RAM for 889 € excl. VAT / year. This should be ideal for handling intensive rendering and high usage.
+The service runs on an OVHcloud Black Friday offer: SYS-LE-5. An 8-core Xeon E-2288G3 + 3 × 2 TB NVMe + 64 GB RAM for 889 € including VAT / year. This should be ideal for handling intensive rendering and high usage.
 
 ## Funding
 
